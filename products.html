@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store | Health and Fitness</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="cssLogo">
+                <div class="logoIcon">⚡</div>
+                <div class="logoText">Health<span class="logoHighlight">Fit</span></div>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" style="color: var(--accent);">Store</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button id="themeToggle">☀️</button>
+        </nav>
+    </header>
+
+    <section class="hero" style="min-height: 40vh; padding-bottom: 20px;">
+        <h1>Premium Collection</h1>
+        <h3>Discover our hand-picked health and fitness gear curated for your lifestyle.</h3>
+    </section>
+
+    <section id="store">
+        <div class="projectGrid">
+            <!-- Product 1 -->
+            <div class="storeCard">
+                <img src="images/smartwatch.png" alt="Smartwatch">
+                <div class="storeCardInfo">
+                    <h3>Titanium Fit Watch</h3>
+                    <p class="price">$199.99</p>
+                    <p>Track your calories, heart rate, and workouts with state-of-the-art precision sensors.</p>
+                    <div style="display: flex; gap: 10px; margin-top: auto;">
+                        <a href="product-smartwatch.html" class="buyBtn outline"
+                            style="flex: 1; background: transparent; border: 1px solid var(--accent); color: var(--accent);">Details</a>
+                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Titanium+Fit+Watch&amount=199.99&currency_code=USD"
+                            class="buyBtn" style="flex: 1;">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="storeCard">
+                <img src="images/earbuds.png" alt="Earbuds">
+                <div class="storeCardInfo">
+                    <h3>Aura Wireless Earbuds</h3>
+                    <p class="price">$89.99</p>
+                    <p>Immersive noise-cancelling audio perfectly designed to comfortably stay in your ears during hard
+                        workouts.</p>
+                    <div style="display: flex; gap: 10px; margin-top: auto;">
+                        <a href="product-earbuds.html" class="buyBtn outline"
+                            style="flex: 1; background: transparent; border: 1px solid var(--accent); color: var(--accent);">Details</a>
+                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Aura+Wireless+Earbuds&amount=89.99&currency_code=USD"
+                            class="buyBtn" style="flex: 1;">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="storeCard">
+                <img src="images/protein.png" alt="Protein">
+                <div class="storeCardInfo">
+                    <h3>Gold Standard Protein</h3>
+                    <p class="price">$59.99</p>
+                    <p>Premium 100% organic whey protein isolate. Designed for rapid muscle recovery and growth.</p>
+                    <div style="display: flex; gap: 10px; margin-top: auto;">
+                        <a href="product-protein.html" class="buyBtn outline"
+                            style="flex: 1; background: transparent; border: 1px solid var(--accent); color: var(--accent);">Details</a>
+                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Gold+Standard+Protein&amount=59.99&currency_code=USD"
+                            class="buyBtn" style="flex: 1;">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Health and Fitness Store</p>
+        <a href="#">Back to top</a>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
