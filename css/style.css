@@ -486,60 +486,68 @@ footer a {
 /* Mobile */
 @media (max-width: 768px) {
 
-  /* --- Nav --- */
+  /* --- Nav: logo left + toggle right on row 1, links on row 2 --- */
   .nav {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 14px 4%;
-    gap: 12px;
+    justify-content: space-between;
+    padding: 12px 4%;
+    gap: 0;
   }
 
   .cssLogo {
     margin-right: 0;
-    font-size: 1.5rem;
-  }
-
-  ul {
-    width: 100%;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    font-size: 0.85rem;
-  }
-
-  li a {
-    font-size: 0.85rem;
+    font-size: 1.4rem;
+    flex: 0 0 auto;
   }
 
   #themeToggle {
-    position: absolute;
-    top: 14px;
-    right: 16px;
+    position: static;
+    flex: 0 0 auto;
+    order: 2;
+  }
+
+  ul {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  li a {
+    font-size: 0.82rem;
   }
 
   /* --- Hero --- */
   .hero {
-    min-height: 100svh;
-    padding-top: 100px;
+    min-height: 100vh;
+    padding-top: 30px;
     padding-bottom: 60px;
     background-attachment: scroll;
-    background-position: center top;
+    background-position: center center;
     background-size: cover;
+    justify-content: center;
   }
 
   .hero h1 {
-    font-size: 2.2rem;
-    padding: 0 10px;
+    font-size: 2rem;
+    padding: 0 12px;
+    margin-bottom: 14px;
   }
 
   .hero h3 {
-    font-size: 1rem;
-    padding: 0 10px;
+    font-size: 0.95rem;
+    padding: 0 12px;
+    margin-bottom: 16px;
   }
 
   .hero p {
-    font-size: 0.95rem;
-    padding: 0 10px;
+    font-size: 0.9rem;
+    padding: 0 12px;
+    margin-bottom: 28px;
   }
 
   /* --- Buttons --- */
