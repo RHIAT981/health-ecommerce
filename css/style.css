@@ -936,3 +936,91 @@ footer a {
     margin-top: 8px;
     font-weight: 700;
 }
+
+/* Countdown Timer Styling */
+.countdown-box {
+    background: rgba(255, 77, 77, 0.1);
+    border: 1px dashed #ff4d4d;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.countdown-text {
+    font-weight: 700;
+    color: #ff4d4d;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+#countdown-timer {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ff4d4d;
+    letter-spacing: 2px;
+}
+
+/* FAQ Section Styling */
+.faq-section {
+    margin-top: 60px;
+    background: var(--card);
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid var(--card-border);
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 15px;
+}
+
+.faq-question {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.faq-answer {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float img {
+    width: 35px;
+}
