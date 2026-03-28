@@ -523,13 +523,17 @@ footer a {
 
   /* --- Hero --- */
   .hero {
-    min-height: 100vh;
-    padding-top: 30px;
-    padding-bottom: 60px;
+    min-height: 100svh;
+    padding-top: 120px;
+    padding-bottom: 80px;
     background-attachment: scroll;
-    background-position: center center;
+    background-position: center top;
     background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .hero h1 {
