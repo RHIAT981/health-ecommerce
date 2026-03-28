@@ -740,6 +740,7 @@ footer a {
 .buyBtn:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
 }
 
 /* Product Landing Pages */
@@ -813,7 +814,8 @@ footer a {
 }
 .buyNowBtn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(144, 194, 255, 0.4);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+  opacity: 0.95;
 }
 
 @media (max-width: 800px) {
