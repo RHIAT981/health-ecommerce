@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Ad Creator | HealthFit</title>
+    <style>
+        :root {
+            --accent: #4da3ff;
+            --bg: #0b0f19;
+            --text: #ffffff;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+        }
+        .container {
+            position: relative;
+            width: 1080px; /* Standard FB/Insta Square or Reel 9:16? Let's go 1080x1920 for Reels */
+            height: 1920px;
+            margin: 0 auto;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        /* Mobile Scaling */
+        @media (max-height: 1920px) {
+            .container {
+                height: 100vh;
+                width: calc(100vh * 9 / 16);
+            }
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+            background-size: cover;
+            background-position: center;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            animation: bounce 2s infinite;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        p {
+            font-size: 1.8rem;
+            color: #ddd;
+            margin-bottom: 40px;
+        }
+
+        .cta {
+            background: #22c55e;
+            color: white;
+            padding: 25px 60px;
+            border-radius: 12px;
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+        }
+
+        .timer-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 10px;
+            background: var(--accent);
+            width: 0%;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+    </style>
+</head>
+<body>
+
+    <div style="position: fixed; top: 10px; left: 10px; z-index: 100; background: rgba(0,0,0,0.5); padding: 10px; font-size: 0.8rem;">
+        HOW TO USE: Open this page, press "F11" for Full Screen, and use your phone or screen-recorder to record this video!
+    </div>
+
+    <div class="container" id="ad-container">
+        <!-- THERMOMETER -->
+        <div class="slide active" style="background-image: url('https://images.pexels.com/photos/3985160/pexels-photo-3985160.jpeg?auto=compress&cs=tinysrgb&w=1280');">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="badge">HealthCare PRO</div>
+                <h1>Monitor Fever<br>24/7 Safely</h1>
+                <p>Track your baby's temperature on your phone instantly.</p>
+                <div class="cta">SHOP NOW</div>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url('https://images.pexels.com/photos/3985160/pexels-photo-3985160.jpeg?auto=compress&cs=tinysrgb&w=1280');">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="badge">SMART ALARM</div>
+                <h1>Instant Mobile Alerts</h1>
+                <p>Sleep better knowing your baby is safe.</p>
+                <div class="cta">30% OFF TODAY</div>
+            </div>
+        </div>
+
+        <!-- DETOX -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1280&q=80');">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="badge">NATURAL DETOX</div>
+                <h1>Drain Toxins<br>While You Sleep</h1>
+                <p>Renew your energy with 10 organic herbal extracts.</p>
+                <div class="cta">RELAX NOW</div>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1280&q=80');">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="badge">SWOLLEN FEET?</div>
+                <h1>Reduce Swelling Naturally</h1>
+                <p>The ultimate 100% Herbal Foot Soak.</p>
+                <div class="cta">BUY 1 GET 1 FREE</div>
+            </div>
+        </div>
+
+        <!-- KNEE PADS -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?w=1280&q=80');">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="badge">ATHLETE GEAR</div>
+                <h1>Elite Knee Protection</h1>
+                <p>Honeycomb technology for maximum impact safety.</p>
+                <div class="cta">GET PROTECTED</div>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1280&q=80');">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="badge">SPORTS READY</div>
+                <h1>Play Without Limits</h1>
+                <p>Breathable, safe, and never slips.</p>
+                <div class="cta">SHOP COLLECTION</div>
+            </div>
+        </div>
+
+        <div class="timer-bar" id="timer"></div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const timerBar = document.getElementById('timer');
+        let currentSlide = 0;
+        const duration = 4000; // 4 seconds per slide
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            // Reset timer bar
+            timerBar.style.transition = 'none';
+            timerBar.style.width = '0%';
+            setTimeout(() => {
+                timerBar.style.transition = `width ${duration}ms linear`;
+                timerBar.style.width = '100%';
+            }, 50);
+        }
+
+        // Start initial timer
+        timerBar.style.transition = `width ${duration}ms linear`;
+        timerBar.style.width = '100%';
+
+        setInterval(nextSlide, duration);
+    </script>
+</body>
+</html>

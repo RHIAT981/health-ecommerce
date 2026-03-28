@@ -823,3 +823,116 @@ footer a {
     flex-direction: column;
   }
 }
+/* Payment Buttons Styles */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.paypal-btn {
+    display: block;
+    background: #ffc439; /* PayPal Yellow */
+    color: #111;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    border: none;
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: normal;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.paypal-btn img {
+    vertical-align: middle;
+    margin-right: 6px;
+    width: 22px;
+}
+
+.paypal-btn:hover {
+    background: #f2ba36;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 196, 57, 0.3);
+}
+
+.credit-btn {
+    display: block;
+    background: #242424; /* Professional dark style */
+    color: #fff;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: normal;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.credit-btn:hover {
+    background: #111;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.light .credit-btn {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+.light .credit-btn:hover {
+    background: #e2e8f0;
+}
+
+.payment-separator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    border-top: 1px dashed var(--card-border);
+    padding-top: 15px;
+    width: 100%;
+}
+
+.badge-text {
+    color: #ffd700;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.badge-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.badge-icons img {
+    width: 28px;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.payment-hint {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 500;
+}
