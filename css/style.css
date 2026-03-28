@@ -183,7 +183,7 @@ section {
   padding-bottom: 40px;
   position: relative;
   max-width: 100%;
-  background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1920&q=80');
+  background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1920&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -535,7 +535,7 @@ footer a {
     padding-top: 140px;
     padding-bottom: 80px;
     background-attachment: scroll;
-    background-position: center bottom; /* focus on the exercise / person better on tall screens */
+    background-position: center top; /* improved framing for the new portrait-friendly photo */
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
