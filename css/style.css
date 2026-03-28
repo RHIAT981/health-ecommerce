@@ -183,11 +183,12 @@ section {
   padding-bottom: 40px;
   position: relative;
   max-width: 100%;
-  background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1920&q=80');
+  background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1920&q=80'); /* Brighter, high-key healthy image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  color: #1a202c; /* Dark text for light background */
 }
 
 .hero::before {
@@ -196,9 +197,9 @@ section {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(11, 15, 25, 0.55) 0%,
-    rgba(11, 15, 25, 0.70) 60%,
-    rgba(11, 15, 25, 0.95) 100%
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.55) 60%,
+    rgba(255, 255, 255, 0.90) 100%
   );
   z-index: 0;
 }
@@ -212,13 +213,14 @@ section {
   font-size: 4.5rem;
   margin-bottom: 20px;
   letter-spacing: -1px;
-  text-shadow: 0 2px 20px rgba(77, 163, 255, 0.4);
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+  color: #0f172a;
 }
 
 .hero h3 {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1.35rem;
-  color: var(--text-muted);
+  color: #475569;
   max-width: 700px;
   margin-bottom: 30px;
 }
@@ -227,6 +229,7 @@ section {
   max-width: 700px;
   margin: 0 auto 40px auto;
   font-size: 1.15rem;
+  color: #334155;
 }
 
 /* Buttons */
@@ -548,9 +551,9 @@ footer a {
   .hero::before {
     background: linear-gradient(
       to bottom,
-      rgba(11, 15, 25, 0.75) 0%,
-      rgba(11, 15, 25, 0.82) 60%,
-      rgba(11, 15, 25, 0.98) 100%
+      rgba(255, 255, 255, 0.60) 0%,
+      rgba(255, 255, 255, 0.70) 50%,
+      rgba(248, 250, 252, 0.98) 100%
     );
   }
 
@@ -558,18 +561,21 @@ footer a {
     font-size: 2rem;
     padding: 0 12px;
     margin-bottom: 14px;
+    color: #1e293b;
   }
 
   .hero h3 {
     font-size: 0.95rem;
     padding: 0 12px;
     margin-bottom: 16px;
+    color: #475569;
   }
 
   .hero p {
     font-size: 0.9rem;
     padding: 0 12px;
     margin-bottom: 28px;
+    color: #64748b;
   }
 
   /* --- Buttons --- */
