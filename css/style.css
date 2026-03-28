@@ -88,29 +88,35 @@ header {
 .cssLogo {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1.6rem;
+  gap: 10px;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.5px;
   transition: transform 0.3s;
+  margin-right: auto;
 }
 
 .cssLogo:hover {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
 .logoIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent);
-  color: #fff;
-  width: 35px;
-  height: 35px;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #4da3ff 0%, #0061d5 100%);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   font-size: 1.2rem;
+  box-shadow: 0 0 18px rgba(77, 163, 255, 0.55);
+  transition: box-shadow 0.3s;
+}
+
+.cssLogo:hover .logoIcon {
+  box-shadow: 0 0 28px rgba(77, 163, 255, 0.85);
 }
 
 .logoHighlight {
@@ -174,7 +180,7 @@ section {
   padding-bottom: 40px;
   position: relative;
   max-width: 100%;
-  background-image: url('../images/hero-banner.png');
+  background-image: url('https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?w=1920&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
