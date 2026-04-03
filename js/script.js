@@ -53,16 +53,17 @@ startCountdown();
 function initAdvancedCardFields(itemName, amount, btnId, numId, expId, cvvId, submitId) {
     if (!document.querySelector(btnId)) return;
     
-    // Hide the native card form elements and dividers because Sandbox is rejecting them
+    // We want the native form visible, because this is what the user actually wants
     const divider = document.querySelector('.payment-divider');
     const nativeForm = document.querySelector('.native-card-form');
     const trustedBadges = document.querySelector('.trusted-badges');
-    if (divider) divider.style.display = 'none';
-    if (nativeForm) nativeForm.style.display = 'none';
-    if (trustedBadges) trustedBadges.style.display = 'none';
+    if (divider) divider.style.display = 'flex';
+    if (nativeForm) nativeForm.style.display = 'flex';
+    if (trustedBadges) trustedBadges.style.display = 'flex';
 
-    // 1. Render Modern Smart Buttons (Allowing all funding sources so Black Card button appears)
+    // 1. Render Blue Smart Button only
     paypal.Buttons({
+        fundingSource: paypal.FUNDING.PAYPAL,
         experience_context: {
             shipping_preference: 'NO_SHIPPING',
             user_action: 'PAY_NOW',
@@ -74,12 +75,58 @@ function initAdvancedCardFields(itemName, amount, btnId, numId, expId, cvvId, su
             window.location.href = 'shipping.html'; 
         })
     }).render(btnId);
+
+    const submitBtn = document.querySelector(submitId);
+    const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+
+    // 2. Render Card Fields if eligible
+    if (paypal.CardFields && paypal.CardFields.isEligible()) {
+        const cardFields = paypal.CardFields({
+            createOrder: (data, actions) => actions.order.create({ 
+                purchase_units: [{ description: itemName, amount: { value: amount } }] 
+            }),
+            onApprove: (data, actions) => actions.order.capture().then(details => { 
+                window.location.href = 'shipping.html'; 
+            }),
+            onError: (err) => {
+                console.error(err);
+                if(submitBtn) submitBtn.innerHTML = originalBtnHTML;
+                alert('حدث خطأ أثناء معالجة البطاقة. يرجى التأكد من البيانات.');
+            }
+        });
+
+        try {
+            cardFields.NumberField().render(numId);
+            cardFields.ExpiryField().render(expId);
+            cardFields.CVVField().render(cvvId);
+            
+            if (submitBtn) {
+                // Change the click event to submit the fields via PayPal API
+                submitBtn.addEventListener('click', () => {
+                    submitBtn.innerHTML = 'جاري الدفع... Processing...';
+                    cardFields.submit().catch(err => {
+                        submitBtn.innerHTML = originalBtnHTML;
+                    });
+                });
+            }
+        } catch(e) {
+            console.error('Failed to render card fields', e);
+        }
+    } else {
+        // If not eligible (e.g. PayPal blocked it), we alert the user instead of bad redirect!
+        if (submitBtn) {
+            submitBtn.addEventListener('click', () => {
+                alert('عذراً، ميزة البطاقات المباشرة مجمدة حالياً من حساب باي بال التابع للبائع. يرجى تفعيلها من لوحة التحكم.');
+            });
+        }
+    }
 }
 
 // Simple PayPal Button for products.html
 function initPayPalButton(itemName, amount, btnId) {
     if (!document.querySelector(btnId)) return;
     paypal.Buttons({
+        fundingSource: paypal.FUNDING.PAYPAL,
         experience_context: {
             shipping_preference: 'NO_SHIPPING',
             user_action: 'PAY_NOW',
