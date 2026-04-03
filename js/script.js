@@ -68,29 +68,53 @@ function initAdvancedCardFields(itemName, amount, btnId, numId, expId, cvvId, su
         })
     }).render(btnId);
 
-    // 2. High-Reliability Fallback for the Green Button
     const submitBtn = document.querySelector(submitId);
-    if (submitBtn) {
-        submitBtn.addEventListener('click', () => {
-            submitBtn.innerHTML = 'جاري التحويل الآمن... Redirecting...';
-            
-            // This is the "Magic Link" that forces Guest Checkout for most regions
-            const fallbackUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(businessEmail)}&item_name=${encodeURIComponent(itemName)}&amount=${amount}&currency_code=USD&solution_type=Sole&landing_page=Billing`;
-            
-            window.location.href = fallbackUrl;
-        });
-    }
+    const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
 
-    // 3. Optional: Render Card Fields if eligible
-    if (paypal.CardFields) {
+    // 2. Render Card Fields if eligible
+    if (paypal.CardFields && paypal.CardFields.isEligible()) {
         const cardFields = paypal.CardFields({
-            createOrder: (data, actions) => actions.order.create({ purchase_units: [{ description: itemName, amount: { value: amount } }] }),
-            onApprove: (data, actions) => actions.order.capture().then(details => { window.location.href = 'shipping.html'; })
+            createOrder: (data, actions) => actions.order.create({ 
+                purchase_units: [{ description: itemName, amount: { value: amount } }] 
+            }),
+            onApprove: (data, actions) => actions.order.capture().then(details => { 
+                window.location.href = 'shipping.html'; 
+            }),
+            onError: (err) => {
+                console.error(err);
+                submitBtn.innerHTML = originalBtnHTML;
+                alert('حدث خطأ أثناء معالجة البطاقة. يرجى التأكد من البيانات.');
+            }
         });
+
         try {
             cardFields.NumberField().render(numId);
             cardFields.ExpiryField().render(expId);
             cardFields.CVVField().render(cvvId);
-        } catch(e) {}
+            
+            if (submitBtn) {
+                // Change the click event to submit the fields via PayPal API
+                submitBtn.addEventListener('click', () => {
+                    submitBtn.innerHTML = 'جاري الدفع... Processing...';
+                    cardFields.submit().catch(err => {
+                        submitBtn.innerHTML = originalBtnHTML;
+                    });
+                });
+            }
+        } catch(e) {
+            setupFallback();
+        }
+    } else {
+        setupFallback();
+    }
+
+    function setupFallback() {
+        if (submitBtn) {
+            submitBtn.addEventListener('click', () => {
+                submitBtn.innerHTML = 'جاري التحويل الآمن... Redirecting...';
+                const fallbackUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(businessEmail)}&item_name=${encodeURIComponent(itemName)}&amount=${amount}&currency_code=USD&solution_type=Sole&landing_page=Billing`;
+                window.location.href = fallbackUrl;
+            });
+        }
     }
 }
