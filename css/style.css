@@ -864,20 +864,31 @@ footer a {
 
 .credit-btn {
     display: block;
-    background: #242424; /* Professional dark style */
-    color: #fff;
+    background: #ffffff; /* Clean white for card input feel */
+    color: #111;
     padding: 15px 10px;
     border-radius: 10px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-    border: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.95rem;
+    border: 2px solid #e2e8f0;
+    font-size: 1rem;
     text-align: center;
     line-height: normal;
     width: 100%;
     box-sizing: border-box;
     cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.credit-btn::after {
+    content: 'الدفع بالبطاقة البنكية';
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    color: #64748b;
+    font-weight: 400;
 }
 
 .credit-btn:hover {
@@ -935,6 +946,14 @@ footer a {
     text-align: center;
     margin-top: 8px;
     font-weight: 700;
+}
+
+.payment-hint::after {
+    content: 'لا تحتاج لحساب بايبال - يمكنك الدفع بأي بطاقة بنكية بأمان';
+    display: block;
+    font-size: 0.7rem;
+    margin-top: 4px;
+    opacity: 0.9;
 }
 
 /* Countdown Timer Styling */
@@ -1017,10 +1036,105 @@ footer a {
     transition: transform 0.3s;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
+/* Premium Checkout Interaction */
+.checkout-container {
+    background: var(--card);
+    border: 1px solid var(--accent);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
 }
 
-.whatsapp-float img {
-    width: 35px;
+.payment-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: var(--text-muted);
 }
+
+.payment-divider::before, .payment-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.payment-divider span {
+    padding: 0 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.native-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-grp {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+}
+
+.input-grp label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.secure-pay {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+    border: none !important;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s !important;
+}
+
+.secure-pay:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(34, 197, 94, 0.4);
+}
+
+.secure-badge {
+    font-size: 0.65rem;
+    opacity: 0.8;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+.trusted-badges {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--card-border);
+}
+
+.trusted-badges img {
+    width: 35px;
+    filter: grayscale(0.2);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.trusted-badges img:hover {
+    opacity: 1;
+}
+
+
+

@@ -47,3 +47,50 @@ function startCountdown() {
 }
 
 startCountdown();
+
+// PayPal Modern Integration Logic
+function initAdvancedCardFields(itemName, amount, btnId, numId, expId, cvvId, submitId) {
+    if (!document.querySelector(btnId)) return;
+    
+    const businessEmail = 'rhiatabdellah712@gmail.com'; // Your PayPal Email
+
+    // 1. Render Modern Smart Buttons
+    paypal.Buttons({
+        experience_context: {
+            shipping_preference: 'NO_SHIPPING',
+            user_action: 'PAY_NOW',
+            landing_page: 'billing' 
+        },
+        style: { shape: 'rect', color: 'blue', layout: 'vertical' },
+        createOrder: (data, actions) => actions.order.create({ purchase_units: [{ description: itemName, amount: { value: amount } }] }),
+        onApprove: (data, actions) => actions.order.capture().then(details => { 
+            window.location.href = 'shipping.html'; 
+        })
+    }).render(btnId);
+
+    // 2. High-Reliability Fallback for the Green Button
+    const submitBtn = document.querySelector(submitId);
+    if (submitBtn) {
+        submitBtn.addEventListener('click', () => {
+            submitBtn.innerHTML = 'جاري التحويل الآمن... Redirecting...';
+            
+            // This is the "Magic Link" that forces Guest Checkout for most regions
+            const fallbackUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(businessEmail)}&item_name=${encodeURIComponent(itemName)}&amount=${amount}&currency_code=USD&solution_type=Sole&landing_page=Billing`;
+            
+            window.location.href = fallbackUrl;
+        });
+    }
+
+    // 3. Optional: Render Card Fields if eligible
+    if (paypal.CardFields) {
+        const cardFields = paypal.CardFields({
+            createOrder: (data, actions) => actions.order.create({ purchase_units: [{ description: itemName, amount: { value: amount } }] }),
+            onApprove: (data, actions) => actions.order.capture().then(details => { window.location.href = 'shipping.html'; })
+        });
+        try {
+            cardFields.NumberField().render(numId);
+            cardFields.ExpiryField().render(expId);
+            cardFields.CVVField().render(cvvId);
+        } catch(e) {}
+    }
+}

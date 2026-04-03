@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health and Fitness | Digital Entrepreneur</title>
 
-    <link rel="stylesheet" href="css/style.css?v=1.2">
+    <link rel="stylesheet" href="css/style.css?v=2.0">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Unified PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&components=buttons,card-fields&currency=USD"></script>
 
 </head>
 
@@ -56,23 +58,27 @@
                     <p class="price">$39.99</p>
                     <p>Clinical-grade 24/7 continuous temperature monitor with remote smartphone alerts. Ensures your baby's safety with high-temperature alarms and precise Xiaomi-ecosystem technology.</p>
                         <a href="product-thermometer.html" class="buyBtn outline" style="margin-bottom: 10px; border-radius: 6px; padding: 10px;">View Product Details</a>
-                        <div class="payment-methods">
-                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Smart+Baby+Thermometer+PRO&amount=39.99&currency_code=USD" class="paypal-btn" target="_blank">
-                                <img src="https://img.icons8.com/color/48/000000/paypal.png" width="20" alt="paypal">
-                                Buy with PayPal
-                            </a>
-                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Smart+Baby+Thermometer+PRO&amount=39.99&currency_code=USD" class="credit-btn" target="_blank">
-                                💳 Pay with Credit Card
-                            </a>
-                            <div class="payment-hint">No PayPal account needed - Pay with any card safely</div>
-                            <div class="payment-separator">
-                                <div class="badge-text">🛡️ Guaranteed Safe Checkout</div>
-                                <div class="badge-icons">
-                                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
-                                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="mastercard">
-                                    <img src="https://img.icons8.com/color/48/000000/amex.png" alt="amex">
-                                    <img src="https://img.icons8.com/color/48/000000/discover.png" alt="discover">
+                        <div class="payment-area">
+                            <div id="paypal-btn-1"></div>
+                            
+                            <div class="card-checkout" id="card-checkout-1">
+                                <div class="card-field-row">
+                                    <label>Card Number / رقم البطاقة</label>
+                                    <div id="card-number-1" class="field-container"></div>
                                 </div>
+                                <div class="card-field-row flex">
+                                    <div style="flex:1">
+                                        <label>Expiry / التاريخ</label>
+                                        <div id="card-expiry-1" class="field-container"></div>
+                                    </div>
+                                    <div style="flex:1">
+                                        <label>CVV / الرمز</label>
+                                        <div id="card-cvv-1" class="field-container"></div>
+                                    </div>
+                                </div>
+                                <button class="buyNowBtn" id="pay-btn-1" style="background:#22c55e; color:#fff; font-size:1.1rem; margin-top:15px; border-radius:10px;">
+                                    COMPLETE PAYMENT | إتمام الدفع الآن
+                                </button>
                             </div>
                         </div>
                 </div>
@@ -86,23 +92,27 @@
                     <p class="price">$24.99</p>
                     <p>Harness the power of 10 organic herbal extracts to support lymphatic drainage, improve sleep, and reduce stress. Contains ginger oil, saffron, and wormwood for deep relaxation and body cleansing.</p>
                         <a href="product-detox.html" class="buyBtn outline" style="margin-bottom: 10px; border-radius: 6px; padding: 10px;">View Product Details</a>
-                        <div class="payment-methods">
-                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Herbal+Detox+Foot+Soak&amount=24.99&currency_code=USD" class="paypal-btn" target="_blank">
-                                <img src="https://img.icons8.com/color/48/000000/paypal.png" width="20" alt="paypal">
-                                Buy with PayPal
-                            </a>
-                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Herbal+Detox+Foot+Soak&amount=24.99&currency_code=USD" class="credit-btn" target="_blank">
-                                💳 Pay with Credit Card
-                            </a>
-                            <div class="payment-hint">No PayPal account needed - Pay with any card safely</div>
-                            <div class="payment-separator">
-                                <div class="badge-text">🛡️ Guaranteed Safe Checkout</div>
-                                <div class="badge-icons">
-                                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
-                                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="mastercard">
-                                    <img src="https://img.icons8.com/color/48/000000/amex.png" alt="amex">
-                                    <img src="https://img.icons8.com/color/48/000000/discover.png" alt="discover">
+                        <div class="payment-area">
+                            <div id="paypal-btn-2"></div>
+                            
+                            <div class="card-checkout" id="card-checkout-2">
+                                <div class="card-field-row">
+                                    <label>Card Number / رقم البطاقة</label>
+                                    <div id="card-number-2" class="field-container"></div>
                                 </div>
+                                <div class="card-field-row flex">
+                                    <div style="flex:1">
+                                        <label>Expiry / التاريخ</label>
+                                        <div id="card-expiry-2" class="field-container"></div>
+                                    </div>
+                                    <div style="flex:1">
+                                        <label>CVV / الرمز</label>
+                                        <div id="card-cvv-2" class="field-container"></div>
+                                    </div>
+                                </div>
+                                <button class="buyNowBtn" id="pay-btn-2" style="background:#22c55e; color:#fff; font-size:1.1rem; margin-top:15px; border-radius:10px;">
+                                    COMPLETE PAYMENT | إتمام الدفع الآن
+                                </button>
                             </div>
                         </div>
                 </div>
@@ -116,23 +126,27 @@
                     <p class="price">$19.99</p>
                     <p>Professional impact-protection for basketball, volleyball, and fitness. High-density honeycomb sponge core ensures maximum joint safety and breathable comfort.</p>
                         <a href="product-kneepads.html" class="buyBtn outline" style="margin-bottom: 10px; border-radius: 6px; padding: 10px;">View Product Details</a>
-                        <div class="payment-methods">
-                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Pro+Honeycomb+Knee+Pads&amount=19.99&currency_code=USD" class="paypal-btn" target="_blank">
-                                <img src="https://img.icons8.com/color/48/000000/paypal.png" width="20" alt="paypal">
-                                Buy with PayPal
-                            </a>
-                            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Pro+Honeycomb+Knee+Pads&amount=19.99&currency_code=USD" class="credit-btn" target="_blank">
-                                💳 Pay with Credit Card
-                            </a>
-                            <div class="payment-hint">No PayPal account needed - Pay with any card safely</div>
-                            <div class="payment-separator">
-                                <div class="badge-text">🛡️ Guaranteed Safe Checkout</div>
-                                <div class="badge-icons">
-                                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
-                                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="mastercard">
-                                    <img src="https://img.icons8.com/color/48/000000/amex.png" alt="amex">
-                                    <img src="https://img.icons8.com/color/48/000000/discover.png" alt="discover">
+                        <div class="payment-area">
+                            <div id="paypal-btn-3"></div>
+                            
+                            <div class="card-checkout" id="card-checkout-3">
+                                <div class="card-field-row">
+                                    <label>Card Number / رقم البطاقة</label>
+                                    <div id="card-number-3" class="field-container"></div>
                                 </div>
+                                <div class="card-field-row flex">
+                                    <div style="flex:1">
+                                        <label>Expiry / التاريخ</label>
+                                        <div id="card-expiry-3" class="field-container"></div>
+                                    </div>
+                                    <div style="flex:1">
+                                        <label>CVV / الرمز</label>
+                                        <div id="card-cvv-3" class="field-container"></div>
+                                    </div>
+                                </div>
+                                <button class="buyNowBtn" id="pay-btn-3" style="background:#22c55e; color:#fff; font-size:1.1rem; margin-top:15px; border-radius:10px;">
+                                    COMPLETE PAYMENT | إتمام الدفع الآن
+                                </button>
                             </div>
                         </div>
                 </div>
@@ -496,8 +510,12 @@
     </footer>
 
 
-    <script src="js/script.js"></script>
-
+    <script src="js/script.js?v=2.0"></script>
+    <script>
+        initAdvancedCardFields('Smart Baby Thermometer PRO', '39.99', '#paypal-btn-1', '#card-number-1', '#card-expiry-1', '#card-cvv-1', '#pay-btn-1');
+        initAdvancedCardFields('Herbal Detox Foot Soak', '24.99', '#paypal-btn-2', '#card-number-2', '#card-expiry-2', '#card-cvv-2', '#pay-btn-2');
+        initAdvancedCardFields('Pro Honeycomb Knee Pads', '19.99', '#paypal-btn-3', '#card-number-3', '#card-expiry-3', '#card-cvv-3', '#pay-btn-3');
+    </script>
 </body>
 
 </html>

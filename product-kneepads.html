@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro Honeycomb Knee Pads | HealthFit</title>
-    <link rel="stylesheet" href="css/style.css?v=1.2">
+    <link rel="stylesheet" href="css/style.css?v=3.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- PayPal SDK with Advanced Card Fields -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&components=buttons,card-fields&currency=USD"></script>
+    
+    <style>
+        .checkout-container { background: #0f172a !important; border: 2px solid #22c55e !important; padding: 25px !important; border-radius: 20px !important; display: block !important; }
+        .native-card-form { display: flex !important; flex-direction: column !important; gap: 15px !important; }
+        .card-field-input { background: #fff !important; border-radius: 8px !important; padding: 10px !important; height: 45px !important; }
+        .secure-pay { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important; color: white !important; font-weight: 800 !important; height: 70px !important; width: 100% !important; border: none !important; }
+    </style>
 </head>
 <body>
     <header>
@@ -56,23 +65,41 @@
                     <div id="countdown-timer">11h : 59m : 59s</div>
                 </div>
 
-                <div class="payment-methods">
-                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Pro+Honeycomb+Knee+Pads+Double+Pack&amount=17.99&currency_code=USD" class="paypal-btn" target="_blank">
-                        <img src="https://img.icons8.com/color/48/000000/paypal.png" width="24" alt="paypal">
-                        Buy with PayPal
-                    </a>
-                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Pro+Honeycomb+Knee+Pads+Double+Pack&amount=17.99&currency_code=USD" class="credit-btn" target="_blank">
-                        💳 Pay with Credit / Debit Card
-                    </a>
-                    <div class="payment-hint">No PayPal account needed - Pay with any card safely</div>
-                    <div class="payment-separator">
-                        <div class="badge-text">🛡️ Guaranteed Safe & Secure Checkout</div>
-                        <div class="badge-icons">
-                            <img src="https://img.icons8.com/color/48/000000/visa.png" width="32" alt="visa">
-                            <img src="https://img.icons8.com/color/48/000000/mastercard.png" width="32" alt="mastercard">
-                            <img src="https://img.icons8.com/color/48/000000/amex.png" width="32" alt="amex">
-                            <img src="https://img.icons8.com/color/48/000000/discover.png" width="32" alt="discover">
+                <div class="checkout-container" id="checkout-section">
+                    <h3 style="margin-bottom:20px; text-align:center;">إتمام الطلب بأمان | Secure Checkout</h3>
+                    
+                    <div class="paypal-instant" id="paypal-buttons-kneepads"></div>
+                    
+                    <div class="payment-divider">
+                        <span>أو الدفع بالبطاقة البنكية | OR CREDIT CARD</span>
+                    </div>
+
+                    <div class="native-card-form">
+                        <div class="input-grp">
+                            <label>Card Number | رقم البطاقة</label>
+                            <div id="card-number-kneepads" class="card-field-input"></div>
                         </div>
+                        <div class="input-row">
+                            <div class="input-grp">
+                                <label>Expiry | التاريخ</label>
+                                <div id="card-expiry-kneepads" class="card-field-input"></div>
+                            </div>
+                            <div class="input-grp">
+                                <label>CVV | الرمز</label>
+                                <div id="card-cvv-kneepads" class="card-field-input"></div>
+                            </div>
+                        </div>
+                        <button class="buyNowBtn secure-pay" id="pay-btn-kneepads">
+                            <span>PURCHASE NOW | شراء الآن</span>
+                            <div class="secure-badge">🛡️ 256-bit SSL Secure</div>
+                        </button>
+                    </div>
+
+                    <div class="trusted-badges">
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
+                        <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="mastercard">
+                        <img src="https://img.icons8.com/color/48/000000/amex.png" alt="amex">
+                        <img src="https://img.icons8.com/color/48/000000/discover.png" alt="discover">
                     </div>
                 </div>
             </div>
@@ -135,6 +162,9 @@
         </div>
         <a href="#" style="margin-top: 20px; display: inline-block;">Back to top</a>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=3.0"></script>
+    <script>
+        initAdvancedCardFields('Pro Honeycomb Knee Pads Pair', '19.99', '#paypal-buttons-kneepads', '#card-number-kneepads', '#card-expiry-kneepads', '#card-cvv-kneepads', '#pay-btn-kneepads');
+    </script>
 </body>
 </html>

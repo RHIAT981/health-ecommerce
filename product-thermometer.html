@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Baby Thermometer PRO | HealthFit</title>
-    <link rel="stylesheet" href="css/style.css?v=1.2">
+    <link rel="stylesheet" href="css/style.css?v=2.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- PayPal SDK with Advanced Card Fields -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&components=buttons,card-fields&currency=USD"></script>
 </head>
 <body>
     <header>
@@ -57,23 +59,41 @@
                     <div id="countdown-timer">11h : 59m : 59s</div>
                 </div>
 
-                <div class="payment-methods">
-                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Smart+Baby+Thermometer+PRO+Special+Offer&amount=35.99&currency_code=USD" class="paypal-btn" target="_blank">
-                        <img src="https://img.icons8.com/color/48/000000/paypal.png" width="24" alt="paypal">
-                        Buy with PayPal
-                    </a>
-                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Smart+Baby+Thermometer+PRO+Special+Offer&amount=35.99&currency_code=USD" class="credit-btn" target="_blank">
-                        💳 Pay with Credit / Debit Card
-                    </a>
-                    <div class="payment-hint">No PayPal account needed - Pay with any card safely</div>
-                    <div class="payment-separator">
-                        <div class="badge-text">🛡️ Guaranteed Safe & Secure Checkout</div>
-                        <div class="badge-icons">
-                            <img src="https://img.icons8.com/color/48/000000/visa.png" width="32" alt="visa">
-                            <img src="https://img.icons8.com/color/48/000000/mastercard.png" width="32" alt="mastercard">
-                            <img src="https://img.icons8.com/color/48/000000/amex.png" width="32" alt="amex">
-                            <img src="https://img.icons8.com/color/48/000000/discover.png" width="32" alt="discover">
+                <div class="checkout-container" id="checkout-section">
+                    <h3 style="margin-bottom:20px; text-align:center;">إتمام الطلب بأمان | Secure Checkout</h3>
+                    
+                    <div class="paypal-instant" id="paypal-buttons-thermometer"></div>
+                    
+                    <div class="payment-divider">
+                        <span>أو الدفع بالبطاقة البنكية | OR CREDIT CARD</span>
+                    </div>
+
+                    <div class="native-card-form">
+                        <div class="input-grp">
+                            <label>Card Number | رقم البطاقة</label>
+                            <div id="card-number-thermometer" class="card-field-input"></div>
                         </div>
+                        <div class="input-row">
+                            <div class="input-grp">
+                                <label>Expiry | التاريخ</label>
+                                <div id="card-expiry-thermometer" class="card-field-input"></div>
+                            </div>
+                            <div class="input-grp">
+                                <label>CVV | الرمز</label>
+                                <div id="card-cvv-thermometer" class="card-field-input"></div>
+                            </div>
+                        </div>
+                        <button class="buyNowBtn secure-pay" id="pay-btn-thermometer">
+                            <span>PURCHASE NOW | شراء الآن</span>
+                            <div class="secure-badge">🛡️ 256-bit SSL Secure</div>
+                        </button>
+                    </div>
+
+                    <div class="trusted-badges">
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
+                        <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="mastercard">
+                        <img src="https://img.icons8.com/color/48/000000/amex.png" alt="amex">
+                        <img src="https://img.icons8.com/color/48/000000/discover.png" alt="discover">
                     </div>
                 </div>
             </div>
@@ -136,6 +156,9 @@
         </div>
         <a href="#" style="margin-top: 20px; display: inline-block;">Back to top</a>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=2.0"></script>
+    <script>
+        initAdvancedCardFields('Smart Baby Thermometer PRO', '39.99', '#paypal-buttons-thermometer', '#card-number-thermometer', '#card-expiry-thermometer', '#card-cvv-thermometer', '#pay-btn-thermometer');
+    </script>
 </body>
 </html>
