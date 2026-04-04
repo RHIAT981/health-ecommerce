@@ -156,20 +156,28 @@ function showBinanceModal(itemName, amount) {
 
     const modalHTML = `
         <div id="binanceModal" class="modal">
-            <div class="modal-content">
+            <div class="modal-content" style="max-width: 400px; padding: 25px;">
                 <span class="close-modal">&times;</span>
-                <img src="https://img.icons8.com/color/96/000000/binance.png" alt="Binance Pay" style="width: 60px; margin-bottom: 15px;">
-                <h2 style="font-size: 1.5rem; margin-bottom: 10px; color: #f3ba2f;">Binance Pay | باينانس</h2>
-                <p style="font-size: 0.9rem; color: #94a3b8;">إرسال المبلغ المطلوب إلى المحفظة التالية:</p>
-                <div style="margin-top: 15px;">
-                    <span class="network-badge">NETWORK: ${binanceNetwork}</span>
+                <div style="text-align: center;">
+                    <img src="https://img.icons8.com/color/96/000000/binance.png" alt="Binance Pay" style="width: 40px; margin-bottom: 5px;">
+                    <h2 style="font-size: 1.3rem; margin-bottom: 15px; color: #f3ba2f;">Binance Pay | باينانس</h2>
                 </div>
-                <div class="wallet-box" id="walletAddr">${binanceWallet}</div>
-                <button class="copy-btn" id="copyBtn">Copy Address | نسخ العنوان</button>
-                <p style="margin-top: 25px; font-size: 0.85rem; color: #94a3b8;">بعد الدفع، يرجى إرسال لقطة شاشة (Screenshot) عبر واتساب لتأكيد طلبك:</p>
-                <a href="${whatsappLink}?text=تم الدفع عبر Binance لمنتدج: ${itemName}" class="btn" style="margin-top: 15px; display: inline-block; background: #25d366; color: white !important;">
-                    إرسال التأكيد | Send Confirmation
-                </a>
+                
+                <!-- QR Code Section -->
+                <div style="text-align: center; margin: 15px 0;">
+                    <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 10px;">Scan to Pay | امسح الكود للدفع</p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${binanceWallet}" alt="Binance QR" style="width: 150px; height: 150px; border-radius: 8px; border: 4px solid #f3ba2f; background: white; padding: 5px;">
+                </div>
+
+                <div style="text-align: center;">
+                    <span class="network-badge" style="display: inline-block; margin-bottom: 10px;">NETWORK: ${binanceNetwork}</span>
+                    <div class="wallet-box" id="walletAddr" style="font-size: 0.8rem; word-break: break-all;">${binanceWallet}</div>
+                    <button class="copy-btn" id="copyBtn" style="width: 100%; margin-top: 10px;">Copy Address | نسخ العنوان</button>
+                    <p style="margin-top: 20px; font-size: 0.8rem; color: #94a3b8;">بعد الدفع، يرجى إرسال لقطة شاشة (Screenshot) عبر واتساب لتأكيد طلبك:</p>
+                    <a href="${whatsappLink}?text=تم الدفع عبر Binance لمنتدج: ${itemName}" class="btn" style="margin-top: 10px; display: block; background: #25d366; color: white !important;">
+                        إرسال التأكيد | Send Confirmation
+                    </a>
+                </div>
             </div>
         </div>
     `;
