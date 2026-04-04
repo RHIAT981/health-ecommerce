@@ -1213,12 +1213,13 @@ footer a {
     align-items: center;
 }
 
+
 .modal-content {
     background: #1e293b;
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     border: 1px solid #f3ba2f;
-    max-width: 450px;
+    max-width: 320px;
     width: 90%;
     text-align: center;
     position: relative;
