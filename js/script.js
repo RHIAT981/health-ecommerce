@@ -162,27 +162,27 @@ function showBinanceModal(itemName, amount) {
         modal = document.getElementById('binanceModal');
     }
 
+
     modal.innerHTML = `
-            <div class="modal-content" style="max-width: 320px; padding: 15px; border-radius: 12px;">
-                <span class="close-modal" style="font-size: 20px;">&times;</span>
+            <div class="modal-content" style="max-width: 270px; padding: 12px; border-radius: 10px;">
+                <span class="close-modal" style="font-size: 18px; top: 10px; right: 15px;">&times;</span>
                 <div style="text-align: center;">
-                    <img src="https://img.icons8.com/color/48/000000/binance.png" alt="Binance Pay" style="width: 32px; margin-bottom: 5px;">
-                    <h2 style="font-size: 1.1rem; margin-bottom: 10px; color: #f3ba2f; font-weight: 700;">Binance Pay</h2>
+                    <img src="https://img.icons8.com/color/48/000000/binance.png" alt="Binance Pay" style="width: 28px; margin-bottom: 2px;">
+                    <h2 style="font-size: 0.95rem; margin-bottom: 8px; color: #f3ba2f; font-weight: 700;">Binance Pay</h2>
                 </div>
                 
-                <div style="text-align: center; margin: 10px 0;">
-                    <p style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 8px;">Scan to Pay | امسح للكود للدفع</p>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${binanceWallet}" alt="Binance QR" style="width: 120px; height: 120px; border-radius: 6px; border: 3px solid #f3ba2f; background: white; padding: 4px;">
+                <div style="text-align: center; margin: 8px 0;">
+                    <p style="font-size: 0.7rem; color: #94a3b8; margin-bottom: 5px;">Scan to Pay | امسح الكود</p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${binanceWallet}" alt="Binance QR" style="width: 100px; height: 100px; border-radius: 4px; border: 2px solid #f3ba2f; background: white; padding: 3px;">
                 </div>
 
                 <div style="text-align: center;">
-                    <span class="network-badge" style="font-size: 0.7rem; padding: 4px 10px; display: inline-block;">NETWORK: ${binanceNetwork}</span>
-                    <div class="wallet-box" id="walletAddr" style="font-size: 0.7rem; word-break: break-all; background: rgba(243, 186, 47, 0.05); border: 1px dashed #f3ba2f; padding: 8px; border-radius: 6px; margin: 8px 0;">${binanceWallet}</div>
-                    <button class="copy-btn" id="copyBtn" style="width: 100%; border-radius: 6px; background: #f3ba2f; color: #000; font-weight: 700; padding: 8px; font-size: 0.85rem;">Copy Address | نسخ العنوان</button>
+                    <span class="network-badge" style="font-size: 0.65rem; padding: 2px 8px; display: inline-block;">TRC20 - Tron</span>
+                    <div class="wallet-box" id="walletAddr" style="font-size: 0.65rem; word-break: break-all; background: rgba(243, 186, 47, 0.03); border: 1px dashed #f3ba2f; padding: 6px; border-radius: 5px; margin: 6px 0;">${binanceWallet}</div>
+                    <button class="copy-btn" id="copyBtn" style="width: 100%; border-radius: 5px; background: #f3ba2f; color: #000; font-weight: 700; padding: 6px; font-size: 0.8rem; cursor: pointer;">Copy Address | نسخ</button>
                     
-                    <p style="margin-top: 15px; font-size: 0.7rem; color: #94a3b8; line-height: 1.3;">بعد الدفع، أرسل لقطة شاشة عبر واتساب:</p>
-                    <a href="${whatsappLink}?text=تم الدفع عبر Binance لمنتدج: ${itemName}" class="btn" style="margin-top: 8px; display: block; background: #25d366; color: white !important; border-radius: 6px; padding: 8px; font-size: 0.85rem;">
-                        إرسال التأكيد | Send Confirmation
+                    <a href="${whatsappLink}?text=تم الدفع عبر Binance لمنتدج: ${itemName}" class="btn" style="margin-top: 6px; display: block; background: #25d366; color: white !important; border-radius: 5px; padding: 6px; font-size: 0.8rem; text-decoration: none;">
+                        إرسال التأكيد | WhatsApp
                     </a>
                 </div>
             </div>
