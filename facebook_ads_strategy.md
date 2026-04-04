@@ -47,3 +47,4 @@ This document outlines the marketing strategy and video scripts for the health e
 *   **Body (3-12s):** Close up of the breathable fabric. Person running/squatting without the pads moving. "Stay cool. Stay dry. Never slips."
 *   **CTA (12-15s):** "The Athlete's Choice. 50% Off Bundle!"
 git add . && git commit -m "Update payment card" && git push
+git add . && git commit -m "Update payment card" && git push

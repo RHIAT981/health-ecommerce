@@ -862,39 +862,37 @@ footer a {
     box-shadow: 0 4px 12px rgba(255, 196, 57, 0.3);
 }
 
+
 .credit-btn {
-    display: block;
-    background: #ffffff; /* Clean white for card input feel */
-    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #111;
+    color: #fff;
     padding: 15px 10px;
     border-radius: 10px;
     font-weight: 700;
     text-decoration: none;
     transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-    border: 2px solid #e2e8f0;
+    border: none;
     font-size: 1rem;
     text-align: center;
-    line-height: normal;
     width: 100%;
     box-sizing: border-box;
     cursor: pointer;
-    position: relative;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-.credit-btn::after {
-    content: 'الدفع بالبطاقة البنكية';
-    display: block;
-    font-size: 0.75rem;
-    margin-top: 4px;
-    color: #64748b;
-    font-weight: 400;
+.credit-btn img {
+    width: 20px;
+    height: auto;
 }
 
 .credit-btn:hover {
-    background: #111;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    background: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
 
 .light .credit-btn {
@@ -1132,8 +1130,143 @@ footer a {
     transition: opacity 0.3s;
 }
 
+
 .trusted-badges img:hover {
     opacity: 1;
+}
+
+/* Payeer & Binance Button Styles */
+.pay-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.payeer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #0088cc;
+    color: white !important;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.payeer-btn:hover {
+    background: #0077b5;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 136, 204, 0.4);
+}
+
+.binance-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #f3ba2f;
+    color: #1a1a1a !important;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.binance-btn:hover {
+    background: #e6b02a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(243, 186, 47, 0.4);
+}
+
+
+.btn-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Binance Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #f3ba2f;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 30px rgba(243, 186, 47, 0.2);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #94a3b8;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.wallet-box {
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px 0;
+    word-break: break-all;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #f3ba2f;
+    border: 1px dashed #334155;
+    position: relative;
+}
+
+.copy-btn {
+    background: #f3ba2f;
+    color: #000;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.network-badge {
+    background: rgba(243, 186, 47, 0.1);
+    color: #f3ba2f;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
 }
 
 

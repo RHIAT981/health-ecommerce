@@ -62,32 +62,30 @@
                 <div class="checkout-container" id="checkout-section">
                     <h3 style="margin-bottom:20px; text-align:center;">إتمام الطلب بأمان | Secure Checkout</h3>
                     
+
+                    <div class="pay-options-container">
+                        <button class="payeer-btn" id="payeer-btn-thermometer">
+                            <img src="https://img.icons8.com/color/48/000000/payeer.png" class="btn-icon-img" alt="Payeer">
+                            <span>PAY WITH PAYEER | بايير</span>
+                        </button>
+                        <button class="binance-btn" id="binance-btn-thermometer">
+                            <img src="https://img.icons8.com/color/48/000000/binance.png" class="btn-icon-img" alt="Binance">
+                            <span>BY BINANCE PAY | باينانس</span>
+                        </button>
+                    </div>
+
+
                     <div class="paypal-instant" id="paypal-buttons-thermometer"></div>
                     
                     <div class="payment-divider">
                         <span>أو الدفع بالبطاقة البنكية | OR CREDIT CARD</span>
                     </div>
 
-                    <div class="native-card-form">
-                        <div class="input-grp">
-                            <label>Card Number | رقم البطاقة</label>
-                            <div id="card-number-thermometer" class="card-field-input"></div>
-                        </div>
-                        <div class="input-row">
-                            <div class="input-grp">
-                                <label>Expiry | التاريخ</label>
-                                <div id="card-expiry-thermometer" class="card-field-input"></div>
-                            </div>
-                            <div class="input-grp">
-                                <label>CVV | الرمز</label>
-                                <div id="card-cvv-thermometer" class="card-field-input"></div>
-                            </div>
-                        </div>
-                        <button class="buyNowBtn secure-pay" id="pay-btn-thermometer">
-                            <span>PURCHASE NOW | شراء الآن</span>
-                            <div class="secure-badge">🛡️ 256-bit SSL Secure</div>
-                        </button>
-                    </div>
+                    <button class="credit-btn" onclick="document.querySelector('#paypal-buttons-thermometer [data-card-button]').click();">
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Card">
+                        <span>PAY WITH CARD | الدفع بالبطاقة</span>
+                    </button>
+                    
 
                     <div class="trusted-badges">
                         <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
@@ -157,8 +155,10 @@
         <a href="#" style="margin-top: 20px; display: inline-block;">Back to top</a>
     </footer>
     <script src="js/script.js?v=4.0"></script>
+
     <script>
         initAdvancedCardFields('Smart Baby Thermometer PRO', '39.99', '#paypal-buttons-thermometer', '#card-number-thermometer', '#card-expiry-thermometer', '#card-cvv-thermometer', '#pay-btn-thermometer');
+        initOtherPayments('Smart Baby Thermometer PRO', '39.99', '#payeer-btn-thermometer', '#binance-btn-thermometer');
     </script>
 </body>
 </html>

@@ -69,32 +69,30 @@
                 <div class="checkout-container" id="checkout-section">
                     <h3 style="margin-bottom:20px; text-align:center;">إتمام الطلب بأمان | Secure Checkout</h3>
                     
+
+                    <div class="pay-options-container">
+                        <button class="payeer-btn" id="payeer-btn-detox">
+                            <img src="https://img.icons8.com/color/48/000000/payeer.png" class="btn-icon-img" alt="Payeer">
+                            <span>PAY WITH PAYEER | بايير</span>
+                        </button>
+                        <button class="binance-btn" id="binance-btn-detox">
+                            <img src="https://img.icons8.com/color/48/000000/binance.png" class="btn-icon-img" alt="Binance">
+                            <span>BY BINANCE PAY | باينانس</span>
+                        </button>
+                    </div>
+
+
                     <div class="paypal-instant" id="paypal-buttons-detox"></div>
                     
                     <div class="payment-divider">
                         <span>أو الدفع بالبطاقة البنكية | OR CREDIT CARD</span>
                     </div>
 
-                    <div class="native-card-form">
-                        <div class="input-grp">
-                            <label>Card Number | رقم البطاقة</label>
-                            <div id="card-number-detox" class="card-field-input"></div>
-                        </div>
-                        <div class="input-row">
-                            <div class="input-grp">
-                                <label>Expiry | التاريخ</label>
-                                <div id="card-expiry-detox" class="card-field-input"></div>
-                            </div>
-                            <div class="input-grp">
-                                <label>CVV | الرمز</label>
-                                <div id="card-cvv-detox" class="card-field-input"></div>
-                            </div>
-                        </div>
-                        <button class="buyNowBtn secure-pay" id="pay-btn-detox">
-                            <span>PURCHASE NOW | شراء الآن</span>
-                            <div class="secure-badge">🛡️ 256-bit SSL Secure</div>
-                        </button>
-                    </div>
+                    <button class="credit-btn" onclick="document.querySelector('#paypal-buttons-detox [data-card-button]').click();">
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Card">
+                        <span>PAY WITH CARD | الدفع بالبطاقة</span>
+                    </button>
+                    
 
                     <div class="trusted-badges">
                         <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
@@ -164,8 +162,10 @@
         <a href="#" style="margin-top: 20px; display: inline-block;">Back to top</a>
     </footer>
     <script src="js/script.js?v=4.0"></script>
+
     <script>
         initAdvancedCardFields('Herbal Detox Foot Soak Bundle', '19.99', '#paypal-buttons-detox', '#card-number-detox', '#card-expiry-detox', '#card-cvv-detox', '#pay-btn-detox');
+        initOtherPayments('Herbal Detox Foot Soak Bundle', '19.99', '#payeer-btn-detox', '#binance-btn-detox');
     </script>
 </body>
 </html>

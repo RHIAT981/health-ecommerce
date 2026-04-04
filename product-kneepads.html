@@ -68,32 +68,30 @@
                 <div class="checkout-container" id="checkout-section">
                     <h3 style="margin-bottom:20px; text-align:center;">إتمام الطلب بأمان | Secure Checkout</h3>
                     
+
+                    <div class="pay-options-container">
+                        <button class="payeer-btn" id="payeer-btn-kneepads">
+                            <img src="https://img.icons8.com/color/48/000000/payeer.png" class="btn-icon-img" alt="Payeer">
+                            <span>PAY WITH PAYEER | بايير</span>
+                        </button>
+                        <button class="binance-btn" id="binance-btn-kneepads">
+                            <img src="https://img.icons8.com/color/48/000000/binance.png" class="btn-icon-img" alt="Binance">
+                            <span>BY BINANCE PAY | باينانس</span>
+                        </button>
+                    </div>
+
+
                     <div class="paypal-instant" id="paypal-buttons-kneepads"></div>
-                    
+
                     <div class="payment-divider">
                         <span>أو الدفع بالبطاقة البنكية | OR CREDIT CARD</span>
                     </div>
 
-                    <div class="native-card-form">
-                        <div class="input-grp">
-                            <label>Card Number | رقم البطاقة</label>
-                            <div id="card-number-kneepads" class="card-field-input"></div>
-                        </div>
-                        <div class="input-row">
-                            <div class="input-grp">
-                                <label>Expiry | التاريخ</label>
-                                <div id="card-expiry-kneepads" class="card-field-input"></div>
-                            </div>
-                            <div class="input-grp">
-                                <label>CVV | الرمز</label>
-                                <div id="card-cvv-kneepads" class="card-field-input"></div>
-                            </div>
-                        </div>
-                        <button class="buyNowBtn secure-pay" id="pay-btn-kneepads">
-                            <span>PURCHASE NOW | شراء الآن</span>
-                            <div class="secure-badge">🛡️ 256-bit SSL Secure</div>
-                        </button>
-                    </div>
+                    <button class="credit-btn" onclick="document.querySelector('#paypal-buttons-kneepads [data-card-button]').click();">
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Card">
+                        <span>PAY WITH CARD | الدفع بالبطاقة</span>
+                    </button>
+                    
 
                     <div class="trusted-badges">
                         <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
@@ -163,8 +161,10 @@
         <a href="#" style="margin-top: 20px; display: inline-block;">Back to top</a>
     </footer>
     <script src="js/script.js?v=4.0"></script>
+
     <script>
         initAdvancedCardFields('Pro Honeycomb Knee Pads Pair', '19.99', '#paypal-buttons-kneepads', '#card-number-kneepads', '#card-expiry-kneepads', '#card-cvv-kneepads', '#pay-btn-kneepads');
+        initOtherPayments('Pro Honeycomb Knee Pads Pair', '19.99', '#payeer-btn-kneepads', '#binance-btn-kneepads');
     </script>
 </body>
 </html>
