@@ -1,7 +1,7 @@
 @echo off
-echo Deploying changes to GitHub...
+echo Deploying payment fixes and thank you page...
 git add .
-git commit -m "Update payment methods: Add Payeer, Binance and Black Credit Card styles"
+git commit -m "Fix payment redirects, add thanks.html, and implement native card fields"
 git push origin main
-echo Done! Please check your website.
+echo DONE! Please refresh your website in 1 minute.
 pause
