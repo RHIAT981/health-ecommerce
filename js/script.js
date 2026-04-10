@@ -93,7 +93,7 @@ function showBinanceModal(itemName, amount) {
             <div class="modal-content" style="max-width: 270px; padding: 12px; border-radius: 10px;">
                 <span class="close-modal" style="font-size: 18px; top: 10px; right: 15px;">&times;</span>
                 <div style="text-align: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#f3ba2f" style="margin-bottom: 2px;"><path d="M16.624 13.9202l-2.624 2.624-2.624-2.624 2.624-2.624 2.624 2.624zm3.696-3.6962l-2.624 2.624-2.616-2.616 2.616-2.624 2.624 2.616zm-3.696-3.6962l-2.624 2.624-2.624-2.624 2.624-2.624 2.624 2.624zm-3.696 3.6962l-2.624 2.624-2.624-2.624 2.624-2.624 2.624 2.624zm-3.696-3.6962l-2.624 2.624-2.624-2.624 2.624-2.624 2.624 2.624zm3.696 11.0886l-2.624 2.624-2.624-2.624 2.624-2.624 2.624 2.624zm-3.696-3.6962l-2.624 2.624-2.624-2.624 2.624-2.624 2.624 2.624zm-3.696-3.6962l-2.624 2.624-2.624-2.624 2.624-2.624 2.624 2.624zm3.696-3.6962l-2.624 2.624-2.632-2.632 2.632-2.624 2.624 2.632z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#f3ba2f" style="margin-bottom: 2px; overflow: visible;"><path d="M12 2L9.5 4.5L12 7L14.5 4.5ZM5 9.5L2.5 12L5 14.5L7.5 12ZM19 9.5L16.5 12L19 14.5L21.5 12ZM12 9.5L9.5 12L12 14.5L14.5 12ZM12 17L9.5 19.5L12 22L14.5 19.5Z"/></svg>
                     <h2 style="font-size: 0.95rem; margin-bottom: 8px; color: #f3ba2f; font-weight: 700;">Binance Pay</h2>
                 </div>
                 <div style="text-align: center; margin: 8px 0;">
