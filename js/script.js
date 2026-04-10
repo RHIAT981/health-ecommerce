@@ -90,32 +90,68 @@ function showBinanceModal(itemName, amount) {
         modal = document.getElementById('binanceModal');
     }
     modal.innerHTML = `
-            <div class="modal-content" style="max-width: 270px; padding: 12px; border-radius: 10px;">
-                <span class="close-modal" style="font-size: 18px; top: 10px; right: 15px;">&times;</span>
+            <div class="modal-content" style="max-width: 320px; padding: 20px; border-radius: 15px; background: #0f172a; border: 1px solid #f3ba2f; color: white;">
+                <span class="close-modal" style="font-size: 24px; top: 10px; right: 15px; color: #cbd5e1; cursor: pointer; position: absolute;">&times;</span>
+                <div style="text-align: center; margin-top: 5px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#f3ba2f" style="margin-bottom: 2px;"><path d="M12 2L9.5 4.5L12 7L14.5 4.5ZM5 9.5L2.5 12L5 14.5L7.5 12ZM19 9.5L16.5 12L19 14.5L21.5 12ZM12 9.5L9.5 12L12 14.5L14.5 12ZM12 17L9.5 19.5L12 22L14.5 19.5Z"/></svg>
+                    <h2 style="font-size: 1.1rem; margin-bottom: 5px; color: #f3ba2f; font-weight: 700;">Binance Pay Checkout</h2>
+                </div>
+                
+                <div style="text-align: center; margin: 10px 0;">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${binanceWallet}" alt="Binance QR" style="width: 110px; height: 110px; border-radius: 8px; border: 2px solid #f3ba2f; background: white; padding: 5px;">
+                </div>
+                
                 <div style="text-align: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#f3ba2f" style="margin-bottom: 2px; overflow: visible;"><path d="M12 2L9.5 4.5L12 7L14.5 4.5ZM5 9.5L2.5 12L5 14.5L7.5 12ZM19 9.5L16.5 12L19 14.5L21.5 12ZM12 9.5L9.5 12L12 14.5L14.5 12ZM12 17L9.5 19.5L12 22L14.5 19.5Z"/></svg>
-                    <h2 style="font-size: 0.95rem; margin-bottom: 8px; color: #f3ba2f; font-weight: 700;">Binance Pay</h2>
+                    <span style="font-size: 0.8rem; font-weight: 600; color: #fff;">Total: $${amount} | Network: TRC20</span>
+                    <div style="font-size: 0.70rem; color: #cbd5e1; word-break: break-all; background: rgba(243, 186, 47, 0.05); border: 1px dashed #f3ba2f; padding: 8px; border-radius: 5px; margin: 8px 0; user-select: all;">${binanceWallet}</div>
+                    <button id="copyBtn" style="width: 100%; border-radius: 5px; background: #334155; color: #fff; border: 1px solid #475569; padding: 8px; font-size: 0.85rem; margin-bottom: 10px; cursor: pointer; transition: 0.2s;">Copy Address | نسخ</button>
                 </div>
-                <div style="text-align: center; margin: 8px 0;">
-                    <p style="font-size: 0.7rem; color: #94a3b8; margin-bottom: 5px;">Scan to Pay | امسح الكود</p>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${binanceWallet}" alt="Binance QR" style="width: 100px; height: 100px; border-radius: 4px; border: 2px solid #f3ba2f; background: white; padding: 3px;">
+                
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">
+                
+                <div style="text-align: left; margin-bottom: 15px;">
+                    <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 15px; text-align: center;">بعد النقل، أدخل عنوان التوصيل لإرسال المنتج إليك:</p>
+                    <label style="color: #cbd5e1; font-size: 0.8rem; margin-bottom: 5px; display: block;">Full Name:</label>
+                    <input type="text" id="wa-name" placeholder="E.g. John Doe" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #475569; background: #1e293b; color: white; margin-bottom: 10px; font-size: 0.85rem; box-sizing: border-box;" required>
+                    
+                    <label style="color: #cbd5e1; font-size: 0.8rem; margin-bottom: 5px; display: block;">Full Shipping Address:</label>
+                    <textarea id="wa-address" placeholder="123 Main St, New York, NY 10001" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #475569; background: #1e293b; color: white; height: 60px; font-size: 0.85rem; box-sizing: border-box; resize: none;" required></textarea>
                 </div>
-                <div style="text-align: center;">
-                    <span class="network-badge" style="font-size: 0.65rem; padding: 2px 8px; display: inline-block;">TRC20 - Tron</span>
-                    <div class="wallet-box" style="font-size: 0.65rem; word-break: break-all; background: rgba(243, 186, 47, 0.03); border: 1px dashed #f3ba2f; padding: 6px; border-radius: 5px; margin: 6px 0;">${binanceWallet}</div>
-                    <button class="copy-btn" id="copyBtn" style="width: 100%; border-radius: 5px; background: #f3ba2f; color: #000; font-weight: 700; padding: 6px; font-size: 0.8rem;">Copy Address | نسخ</button>
-                    <a href="${whatsappLink}?text=تم الدفع عبر Binance لمنتدج: ${itemName}" class="btn" style="margin-top: 6px; display: block; background: #25d366; color: white !important; border-radius: 5px; padding: 6px; font-size: 0.8rem; text-decoration: none;">
-                        إرسال التأكيد | WhatsApp
-                    </a>
-                </div>
+                
+                <button id="sendWaBtn" style="width: 100%; font-weight: bold; background: #25d366; color: white !important; border: none; border-radius: 5px; padding: 12px; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12.01 2.01c-5.52 0-9.99 4.47-9.99 9.99 0 1.96.57 3.79 1.54 5.34l-1.57 5.75 5.86-1.54c1.51.93 3.29 1.46 5.16 1.46 5.52 0 9.99-4.47 9.99-9.99 0-5.52-4.47-9.99-9.99-9.99zm5.55 14.15c-.27.76-1.54 1.48-2.12 1.56-.54.08-1.25.13-3.64-.86-2.87-1.19-4.72-4.14-4.86-4.32-.14-.19-1.16-1.55-1.16-2.96 0-1.42.74-2.12 1.01-2.42.27-.3.59-.38.79-.38.2 0 .4 0 .57.01.19.01.44-.07.69.53.26.63.89 2.18.97 2.34.08.16.14.34.04.53-.1.19-.15.31-.3.47-.15.16-.32.36-.45.48-.15.16-.32.32-.14.62.18.3 1.13 1.83 2.5 3.06 1.77 1.59 3.27 2.08 3.57 2.22.3.14.48.11.66-.1.18-.21.78-.91.99-1.22.2-.31.42-.26.69-.16.27.1 1.72.81 2.02.96.3.15.5.23.57.36.07.12.07.72-.2 1.48z"/></svg>
+                    Send Proof & Address
+                </button>
             </div>`;
     modal.style.display = 'flex';
     document.querySelector('.close-modal').onclick = () => modal.style.display = 'none';
+    
     document.getElementById('copyBtn').onclick = () => {
         navigator.clipboard.writeText(binanceWallet).then(() => {
             const btn = document.getElementById('copyBtn');
             btn.innerHTML = "Copied! | تم النسخ";
             setTimeout(() => btn.innerHTML = "Copy Address | نسخ", 2000);
         });
+    };
+    
+    document.getElementById('sendWaBtn').onclick = () => {
+        const name = document.getElementById('wa-name').value.trim();
+        const address = document.getElementById('wa-address').value.trim();
+        
+        if (!name || !address) {
+            alert("Please enter your full name and shipping address before confirming via WhatsApp.\n\nيرجى إدخال اسمك الكامل وعنوان التوصيل أولاً حتى نتمكن من شحن طلبك.");
+            return;
+        }
+        
+        const message = `*✅ Binance Payment Received - Order Request*\n\n*🛒 Product:* ${itemName}\n*💰 Total Paid:* $${amount} USDT\n\n*📦 Shipping Information:*\n*Name:* ${name}\n*Address:* ${address}\n\n_Please find attached the screenshot of my payment._`;
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Open whatsapp link
+        window.open(`${whatsappLink}?text=${encodedMessage}`, '_blank');
+        
+        // Optionally alert the user too
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 1000);
     };
 }
