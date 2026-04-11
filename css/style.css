@@ -1034,6 +1034,31 @@ footer a {
     transition: transform 0.3s;
 }
 
+/* Floating Telegram Button */
+.telegram-float {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #0088cc;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover, .telegram-float:hover {
+    transform: scale(1.1);
+}
+
 /* Premium Checkout Interaction */
 .checkout-container {
     background: var(--card);
