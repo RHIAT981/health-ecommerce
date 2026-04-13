@@ -47,7 +47,12 @@ startCountdown();
 // Standard PayPal Link Generator (No API needed)
 function getPayPalEmailLink(itemName, amount) {
     const email = "abdellah.rhiat@gmail.com";
-    return `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(email)}&item_name=${encodeURIComponent(itemName)}&amount=${encodeURIComponent(amount)}&currency_code=USD`;
+    const currentUrl = window.location.href.split('?')[0];
+    const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/'));
+    const successUrl = `${baseUrl}/thanks.html`;
+    const cancelUrl = currentUrl;
+
+    return `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(email)}&item_name=${encodeURIComponent(itemName)}&amount=${encodeURIComponent(amount)}&currency_code=USD&return=${encodeURIComponent(successUrl)}&cancel_return=${encodeURIComponent(cancelUrl)}`;
 }
 
 function initPayPalButton(itemName, amount, btnId) {
@@ -58,9 +63,9 @@ function initPayPalButton(itemName, amount, btnId) {
 
 function renderFallbackButton(container, itemName, amount) {
     container.innerHTML = `
-        <a href="${getPayPalEmailLink(itemName, amount)}" target="_blank" class="paypal-btn" style="background:#ffc439; color:#111; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:10px; padding:12px; border-radius:10px; font-weight:bold; margin-bottom:10px; width:100%; box-sizing:border-box; text-align:center;">
-            <img src="https://img.icons8.com/color/48/000000/paypal.png" style="width:24px; vertical-align:middle;">
-            PAY WITH PAYPAL
+        <a href="${getPayPalEmailLink(itemName, amount)}" target="_blank" class="paypal-btn">
+            <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal">
+            <span>PayPal | الدفع عبر بايبال</span>
         </a>
     `;
 }
