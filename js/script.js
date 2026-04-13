@@ -44,37 +44,29 @@ function startCountdown() {
 }
 startCountdown();
 
-// The only reliable PayPal Button for all account types
+// Standard PayPal Link Generator (No API needed)
+function getPayPalEmailLink(itemName, amount) {
+    const email = "abdellah.rhiat@gmail.com";
+    return `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(email)}&item_name=${encodeURIComponent(itemName)}&amount=${encodeURIComponent(amount)}&currency_code=USD`;
+}
+
 function initPayPalButton(itemName, amount, btnId) {
-    if (!document.querySelector(btnId)) return;
-    paypal.Buttons({
-        experience_context: {
-            shipping_preference: 'NO_SHIPPING',
-            user_action: 'PAY_NOW',
-            landing_page: 'billing'
-        },
-        style: { 
-            shape: 'rect', 
-            color: 'gold', 
-            layout: 'vertical',
-            label: 'pay'
-        },
-        createOrder: (data, actions) => actions.order.create({ purchase_units: [{ description: itemName, amount: { value: amount } }] }),
-        onApprove: (data, actions) => actions.order.capture().then(details => {
-            console.log("Success:", details);
-            window.location.href = 'thanks.html';
-        }).catch(err => {
-            console.error("Capture Error:", err);
-            alert("عذراً، لم تكتمل العملية. يرجى التأكد من رصيد بطاقتك أو تفعيلها للمشتريات عبر الإنترنت.\n\nTransaction failed. Please check your card balance or ensure it is activated for online shopping.\n\nÉchec de la transaction. Veuillez vérifier le solde de votre carte ou vous assurer qu'elle est activée pour les achats en ligne.");
-        }),
-        onError: (err) => {
-            console.error("PayPal Error:", err);
-            alert("عذراً، لم تكتمل العملية. يرجى التأكد من رصيد بطاقتك أو تفعيلها للمشتريات عبر الإنترنت.\n\nTransaction failed. Please check your card balance or ensure it is activated for online shopping.\n\nÉchec de la transaction. Veuillez vérifier le solde de votre carte ou vous assurer qu'elle est activée pour les achats en ligne.");
-        }
-    }).render(btnId);
+    const container = document.querySelector(btnId);
+    if (!container) return;
+    renderFallbackButton(container, itemName, amount);
+}
+
+function renderFallbackButton(container, itemName, amount) {
+    container.innerHTML = `
+        <a href="${getPayPalEmailLink(itemName, amount)}" target="_blank" class="paypal-btn" style="background:#ffc439; color:#111; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:10px; padding:12px; border-radius:10px; font-weight:bold; margin-bottom:10px; width:100%; box-sizing:border-box; text-align:center;">
+            <img src="https://img.icons8.com/color/48/000000/paypal.png" style="width:24px; vertical-align:middle;">
+            PAY WITH PAYPAL
+        </a>
+    `;
 }
 
 // Re-using initPayPalButton for all specialized integrations
+
 function initAdvancedCardFields(itemName, amount, btnId) {
     initPayPalButton(itemName, amount, btnId);
 }
