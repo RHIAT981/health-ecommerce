@@ -1,25 +1,30 @@
-const toggle = document.getElementById("themeToggle");
+// Intersection Observer for Premium Scroll Animations
+const observerOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+};
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+            // Once revealed, we can stop observing if we want a one-time animation
+            // observer.unobserve(entry.target); 
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('section, .card, .storeCard, .projectCard, .timeline > div').forEach(el => {
+    el.classList.add('hidden-section');
+    observer.observe(el);
+});
+
+const toggle = document.getElementById("themeToggle");
 if (toggle) {
     toggle.onclick = () => {
         document.body.classList.toggle("light");
     }
 }
-
-const cards = document.querySelectorAll(".card");
-
-function handleScroll() {
-    cards.forEach(card => {
-        let top = card.getBoundingClientRect().top;
-        if (top < window.innerHeight - 50) {
-            card.style.opacity = 1;
-            card.style.transform = "translateY(0px)";
-        }
-    });
-}
-
-window.addEventListener("scroll", handleScroll);
-handleScroll();
 
 // Countdown Timer
 function startCountdown() {
