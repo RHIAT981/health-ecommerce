@@ -69,8 +69,127 @@ function renderFallbackButton(container, itemName, amount) {
 
 // Re-using initPayPalButton for all specialized integrations
 
-function initAdvancedCardFields(itemName, amount, btnId) {
-    initPayPalButton(itemName, amount, btnId);
+function initAdvancedCardFields(itemName, amount, btnId, cardNumberId, cardExpiryId, cardCvvId, payBtnId) {
+    let attempts = 0;
+    const maxAttempts = 20;
+
+    const render = () => {
+        if (window.paypal) {
+            console.log('PayPal SDK loaded, initializing fields...');
+            proceedWithInit();
+        } else if (attempts < maxAttempts) {
+            attempts++;
+            console.log(`Waiting for PayPal SDK... Attempt ${attempts}`);
+            setTimeout(render, 500);
+        } else {
+            console.error('PayPal SDK failed to load after 10 seconds.');
+            renderFallbackButton(document.querySelector(btnId), itemName, amount);
+        }
+    };
+
+    const proceedWithInit = () => {
+        // Try rendering Advanced Card Fields if available
+        if (paypal.CardFields && cardNumberId && cardExpiryId && cardCvvId) {
+            try {
+                const cardFields = paypal.CardFields({
+                    createOrder: function (data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                description: itemName,
+                                amount: { currency_code: "USD", value: amount }
+                            }]
+                        });
+                    },
+                    onApprove: function (data, actions) {
+                        return actions.order.capture().then(function (details) {
+                            window.location.href = "thanks.html";
+                        });
+                    },
+                    onError: function (err) {
+                        console.error('Card Fields Error:', err);
+                        renderStandardButtons(itemName, amount, btnId);
+                    }
+                });
+
+                if (cardFields.isEligible()) {
+                    console.log('Card Fields are eligible.');
+                    const numberField = cardFields.NumberField();
+                    const expiryField = cardFields.ExpiryField();
+                    const cvvField = cardFields.CVVField();
+
+                    if (document.querySelector(cardNumberId)) {
+                        numberField.render(cardNumberId);
+                        expiryField.render(cardExpiryId);
+                        cvvField.render(cardCvvId);
+
+                        const payBtn = document.querySelector(payBtnId);
+                        if (payBtn) {
+                            payBtn.onclick = () => {
+                                payBtn.innerHTML = "Processing...";
+                                payBtn.disabled = true;
+                                cardFields.submit().catch((err) => {
+                                    console.error('Submission error:', err);
+                                    payBtn.innerHTML = "PAY NOW | الدفع الآن";
+                                    payBtn.disabled = false;
+                                });
+                            };
+                        }
+                        return; 
+                    }
+                } else {
+                    console.log('Card Fields not eligible for this account/region. Falling back to standard buttons.');
+                }
+            } catch (e) {
+                console.error('Error initializing CardFields:', e);
+            }
+        }
+
+        renderStandardButtons(itemName, amount, btnId);
+    };
+
+    render();
+}
+
+function renderStandardButtons(itemName, amount, btnId) {
+    const container = document.querySelector(btnId);
+    if (!container) return;
+
+    // Clear container
+    container.innerHTML = '<p style="text-align:center; font-size:0.8rem; color:#94a3b8;">Loading Secure Payment...</p>';
+
+    try {
+        paypal.Buttons({
+            style: {
+                layout: 'vertical',
+                color: 'gold',
+                shape: 'rect',
+                label: 'pay'
+            },
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        description: itemName,
+                        amount: { currency_code: "USD", value: amount }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    window.location.href = "thanks.html";
+                });
+            },
+            onError: function(err) {
+                console.error('PayPal Buttons Error:', err);
+                renderFallbackButton(container, itemName, amount);
+            }
+        }).render(btnId).catch(err => {
+            console.error('Button Render Catch:', err);
+            renderFallbackButton(container, itemName, amount);
+        });
+    } catch (e) {
+        console.error('Critical Error in Buttons:', e);
+        renderFallbackButton(container, itemName, amount);
+    }
 }
 
 function initOtherPayments(itemName, amount, payeerBtnId, binanceBtnId) {

@@ -898,146 +898,71 @@ footer a {
     flex-direction: column;
   }
 }
-/* Payment Buttons Styles */
-.payment-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: auto;
-    width: 100%;
+/* ============================================
+   REINFORCED PAYMENT GATEWAY STYLES
+   ============================================ */
+.payment-area, .payment-methods, .checkout-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
+/* Base style for ALL payment buttons */
+.paypal-btn, .credit-btn, .binance-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+    margin: 5px 0 !important;
+}
+
+/* PayPal Specific - Classic Yellow */
 .paypal-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #ffc439;
-    color: #111;
-    height: 45px;
-    border-radius: 10px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: background 0.2s;
-    border: none;
-    font-size: 0.95rem;
-    text-align: center;
-    width: 100%;
-    margin: 10px 0;
-    box-sizing: border-box;
-    cursor: pointer;
+    background: #ffc400 !important; /* Brighter PayPal Yellow */
+    color: #111 !important;
+}
+.paypal-btn:hover { background: #ffb100 !important; transform: translateY(-2px); }
+
+/* Credit Card Specific - Dark Slate */
+.credit-btn {
+    background: #1e293b !important;
+    color: #ffffff !important;
+}
+.credit-btn:hover { background: #334155 !important; transform: translateY(-2px); }
+
+/* Binance Specific - Black & Gold */
+.binance-btn {
+    background: #000000 !important;
+    color: #f3ba2f !important;
+    border: 1px solid #f3ba2f !important;
+}
+.binance-btn:hover { background: #111111 !important; transform: translateY(-2px); }
+
+/* Icon sizes */
+.paypal-btn svg, .credit-btn img, .binance-btn svg {
+    width: 24px !important;
+    height: 24px !important;
+    margin-right: 10px !important;
+    flex-shrink: 0 !important;
 }
 
-.paypal-btn svg {
-    vertical-align: middle;
-    margin-right: 8px;
-    width: 22px;
-    height: 22px;
-}
-
-.paypal-btn:hover {
-    background: #f2ba36;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(255, 196, 57, 0.4);
-}
-
-.paypal-btn:active {
+.paypal-btn:active, .credit-btn:active, .binance-btn:active {
     transform: translateY(0);
 }
-
-
-.credit-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background: #111;
-    color: #fff;
-    padding: 15px 10px;
-    border-radius: 10px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-    border: none;
-    font-size: 1rem;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-.credit-btn img {
-    width: 20px;
-    height: auto;
-}
-
-.credit-btn:hover {
-    background: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-}
-
-.light .credit-btn {
-    background: #f1f5f9;
-    color: #0f172a;
-    border-color: #cbd5e1;
-}
-
-.light .credit-btn:hover {
-    background: #e2e8f0;
-}
-
-.payment-separator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 15px;
-    border-top: 1px dashed var(--card-border);
-    padding-top: 15px;
-    width: 100%;
-}
-
-.badge-text {
-    color: #ffd700;
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-}
-
-.badge-icons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
-.badge-icons img {
-    width: 28px;
-    height: auto;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-    border-radius: 4px;
-    box-shadow: none;
-}
-
-.payment-hint {
-    color: #ffd700; /* Vibrant Gold for attention */
-    font-size: 0.75rem;
-    text-align: center;
-    margin-top: 8px;
-    font-weight: 700;
-}
-
-.payment-hint::after {
-    content: 'لا تحتاج لحساب بايبال - يمكنك الدفع بأي بطاقة بنكية بأمان';
-    display: block;
-    font-size: 0.7rem;
-    margin-top: 4px;
-    opacity: 0.9;
-}
-
-/* Countdown Timer Styling */
 .countdown-box {
     background: rgba(255, 77, 77, 0.1);
     border: 1px dashed #ff4d4d;
@@ -1249,32 +1174,6 @@ footer a {
     flex-direction: column;
     gap: 12px;
     margin-bottom: 20px;
-}
-
-.credit-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: #000;
-    color: #fff !important;
-    padding: 12px;
-    height: 45px;
-    border-radius: 10px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin: 10px 0;
-    font-size: 0.95rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.credit-btn:hover {
-    background: #222;
-    transform: translateY(-1px);
 }
 
 .payeer-btn {
