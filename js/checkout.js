@@ -19,12 +19,39 @@ document.querySelectorAll('section, .card, .storeCard, .projectCard, .timeline >
     observer.observe(el);
 });
 
-const toggle = document.getElementById("themeToggle");
-if (toggle) {
-    toggle.onclick = () => {
-        document.body.classList.toggle("light");
+// ============================================
+// THEME TOGGLE — Dark / Light Mode
+// ============================================
+function applyTheme() {
+    const saved = localStorage.getItem('theme');
+    const toggle = document.getElementById("themeToggle");
+    if (saved === 'light') {
+        document.body.classList.add("light");
+        if (toggle) toggle.textContent = '🌙';
+    } else {
+        document.body.classList.remove("light");
+        if (toggle) toggle.textContent = '☀️';
     }
 }
+
+function initThemeToggle() {
+    const toggle = document.getElementById("themeToggle");
+    if (!toggle) return;
+    applyTheme();
+    toggle.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle("light");
+        toggle.textContent = isLight ? '🌙' : '☀️';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+}
+
+// Run when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
+} else {
+    initThemeToggle();
+}
+
 
 // Countdown Timer
 function startCountdown() {

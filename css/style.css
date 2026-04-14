@@ -1,3 +1,4 @@
+:root {
   --bg: #030a05;
   --bg-gradient: radial-gradient(circle at 50% 50%, #06150a 0%, #030a05 100%);
   --card: rgba(6, 21, 10, 0.7);
@@ -1380,4 +1381,48 @@ footer a {
     margin-top: 5px;
     color: var(--text-muted);
     font-style: italic;
+}
+
+/* ============================================
+   DARK/LIGHT MODE SMOOTH TRANSITIONS
+   ============================================ */
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Light Mode Specific Overrides */
+.light .hero h1 {
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.light header {
+    background: rgba(248, 250, 252, 0.85);
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.light .card:hover, .light .projectCard:hover {
+    background: rgba(0, 0, 0, 0.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.light footer {
+    background: #f1f5f9;
+    border-top-color: rgba(0,0,0,0.08);
+}
+
+.light #themeToggle {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+    color: #1e293b;
+}
+
+.light .storeCard {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.light .checkout-container {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
