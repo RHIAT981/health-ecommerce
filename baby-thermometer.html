@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herbal Detox Foot Soak | Health2026</title>
+    <title>Smart Baby Thermometer PRO | Health2026</title>
     <link rel="stylesheet" href="css/style.css?v=30.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- PayPal SDK with Advanced Card Fields -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AcbBKz68JfFF5dYLJc0UUeRbBu5LF810Xa3vvMCJ-W9P0QVvUJ2PDTjXYoEUZZTCeIizq5Wqx2LppUG6&currency=USD&components=buttons,card-fields"></script>
-    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AcbBKz68JfFF5dYLJc0UUeRbBu5LF810Xa3vvMCJ-W9P0QVvUJ2PDTjXYoEUZZTCeIizq5Wqx2LppUG6&currency=USD&components=buttons"></script>
     <style>
         .checkout-container { background: #0f172a !important; border: 2px solid #22c55e !important; padding: 25px !important; border-radius: 20px !important; display: block !important; }
         .native-card-form { display: flex !important; flex-direction: column !important; gap: 15px !important; }
         .card-field-input { background: #fff !important; border-radius: 8px !important; padding: 10px !important; height: 45px !important; }
         .secure-pay { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important; color: white !important; font-weight: 800 !important; height: 70px !important; width: 100% !important; border: none !important; }
-        
+
         /* Premium Landing Page Styles */
         .lp-hero { display: flex; flex-direction: column; gap: 40px; align-items: flex-start; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         @media(min-width: 900px) { .lp-hero { flex-direction: row; } }
@@ -28,7 +27,7 @@
         .lp-badge { background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 8px 18px; border-radius: 30px; font-weight: 800; width: fit-content; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; box-shadow: 0 4px 15px rgba(34,197,94,0.4); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); } 70% { box-shadow: 0 0 0 12px rgba(34,197,94,0); } 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); } }
         .lp-title { font-size: 3rem; line-height: 1.1; font-weight: 800; margin: 0; color: #fff; text-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-        .lp-title-highlight { background: -webkit-linear-gradient(45deg, #22c55e, #a3e635); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .lp-title-highlight { background: -webkit-linear-gradient(45deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .lp-desc { font-size: 1.1rem; line-height: 1.7; color: #cbd5e1; }
         .lp-price-box { display: flex; align-items: center; gap: 15px; background: rgba(34,197,94,0.05); padding: 15px 25px; border-radius: 15px; border-left: 4px solid #22c55e; }
         .lp-price-new { font-size: 2.5rem; font-weight: 800; color: #22c55e; margin: 0; }
@@ -36,12 +35,12 @@
         
         .lp-video-section { max-width: 1000px; margin: 60px auto; text-align: center; padding: 40px 20px; background: rgba(15,23,42,0.6); border-radius: 30px; border: 1px solid rgba(255,255,255,0.05); }
         .lp-video-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; color: #fff; }
-        .lp-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); background: #000; border: 2px solid rgba(34,197,94,0.3); }
+        .lp-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); background: #000; border: 2px solid rgba(251,191,36,0.3); }
         .lp-video-container iframe, .lp-video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         
         .lp-benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 10px 0; }
         .lp-benefit-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(34, 197, 94, 0.15); padding: 25px; border-radius: 16px; backdrop-filter: blur(10px); transition: 0.3s; display: flex; flex-direction: column; align-items: flex-start; }
-        .lp-benefit-card:hover { transform: translateY(-5px); background: rgba(34, 197, 94, 0.08); border-color: rgba(34, 197, 94, 0.5); }
+        .lp-benefit-card:hover { transform: translateY(-5px); background: rgba(255, 196, 57, 0.05); border-color: rgba(251, 191, 36, 0.4); }
         .lp-benefit-icon { font-size: 2.5rem; margin-bottom: 15px; }
         .lp-benefit-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; color: #f8fafc; }
         .lp-benefit-text { font-size: 0.95rem; color: #94a3b8; line-height: 1.5; }
@@ -74,95 +73,72 @@
         <div class="lp-hero">
             <!-- 📷 PRODUCT GALLERY SECTION -->
             <div class="lp-gallery">
-                <img src="images/detox_1.png" alt="Herbal Detox Foot Soak Main" class="lp-main-img" id="mainImage">
+                <img src="images/thermometer_1.png" alt="Smart Baby Thermometer PRO Main" class="lp-main-img" id="mainImage">
                 <div class="lp-thumbnails">
-                    <img src="images/detox_1.png" alt="Thumbnail 1" class="lp-thumb" onclick="document.getElementById('mainImage').src=this.src;">
-                    <img src="images/detox_2.png" alt="Thumbnail 2" class="lp-thumb" onclick="document.getElementById('mainImage').src=this.src;">
+                    <img src="images/thermometer_1.png" alt="Thumbnail 1" class="lp-thumb" onclick="document.getElementById('mainImage').src=this.src;">
+                    <img src="https://images.pexels.com/photos/3985160/pexels-photo-3985160.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Thumbnail 2" class="lp-thumb" onclick="document.getElementById('mainImage').src=this.src;">
                 </div>
             </div>
 
             <!-- 📝 PRODUCT INFO SECTION -->
             <div class="lp-content">
-                <div class="lp-badge">✨ 100% Organic & Natural</div>
-                <h1 class="lp-title">Herbal Detox <br><span class="lp-title-highlight">Foot Soak</span></h1>
+                <div class="lp-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706);">⭐ TOP RATED PARENTING GEAR</div>
+                <h1 class="lp-title">Smart Baby <br><span class="lp-title-highlight">Thermometer PRO</span></h1>
                 
                 <div class="lp-price-box">
-                    <p class="lp-price-new">$24.99</p>
-                    <p class="lp-price-old">$34.99</p>
+                    <p class="lp-price-new">$39.99</p>
+                    <p class="lp-price-old">$59.99</p>
                 </div>
                 
                 <p style="color: #22c55e; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    Verified: 10,000+ units sold this month
+                    Ready to ship: Dispatches in 24 hours.
                 </p>
                 
-                <p class="lp-desc">Experience the ultimate home spa rejuvenation. Formulated with authentic ginger oil, premium saffron, mugwort, and wormwood. This powerful herbal blend actively stimulates lymphatic drainage, dramatically improves blood circulation, and effortlessly melts physical stress away.</p>
+                <p class="lp-desc">Ensure your baby's health with the Miaomiaoce Smart Baby Thermometer PRO. This clinical-grade wearable device provides 24/7 continuous temperature monitoring, directly syncing with your smartphone. With its precise Xiaomi-ecosystem technology and high-temperature alarm, you'll receive instant alerts if a fever is detected, allowing for immediate care even while you sleep. Made with medical-grade, skin-friendly materials for ultimate safety.</p>
                 
                 <div class="lp-benefits">
                     <div class="lp-benefit-card">
-                        <div class="lp-benefit-icon">🌿</div>
-                        <div class="lp-benefit-title">Natural Ingredients</div>
-                        <div class="lp-benefit-text">Sourced from 100% organic, chemical-free herbal extracts.</div>
+                        <div class="lp-benefit-icon">📱</div>
+                        <div class="lp-benefit-title">Instant Alerts</div>
+                        <div class="lp-benefit-text">Receive high-temperature notifications directly to your phone.</div>
                     </div>
                     <div class="lp-benefit-card">
-                        <div class="lp-benefit-icon">🩸</div>
-                        <div class="lp-benefit-title">Reduces Swelling</div>
-                        <div class="lp-benefit-text">Actively improves circulation & relieves ankle/leg swelling.</div>
+                        <div class="lp-benefit-icon">🎯</div>
+                        <div class="lp-benefit-title">High Precision</div>
+                        <div class="lp-benefit-text">Clinical accuracy (±0.1°C) with 24/7 real-time monitoring.</div>
                     </div>
                 </div>
 
                 <!-- 🛒 CHECKOUT SECTION -->
-                <div class="checkout-container" id="checkout-section" style="margin-top: 10px;">
+                <div class="checkout-container reveal" id="checkout-section" style="margin-top: 10px; opacity: 1 !important; visibility: visible !important;">
                     <h3 style="margin-bottom:20px; text-align:center; color: #fff;">إتمام الطلب بأمان | Secure Checkout</h3>
                     
                     <div class="countdown-box" style="margin-bottom: 25px;">
-                        <div class="countdown-text">⚡ HUGE DEMAND - PRICE INCREASES IN:</div>
+                        <div class="countdown-text">⚡ EXTRA 10% OFF IF YOU ORDER IN:</div>
                         <div id="countdown-timer">11h : 59m : 59s</div>
                     </div>
 
                     <div class="pay-options-container">
-                        <button class="binance-btn" id="binance-btn-detox">
+                        <button class="binance-btn" id="binance-btn-thermometer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f3ba2f"><path d="M12 2L9.5 4.5L12 7L14.5 4.5ZM5 9.5L2.5 12L5 14.5L7.5 12ZM19 9.5L16.5 12L19 14.5L21.5 12ZM12 9.5L9.5 12L12 14.5L14.5 12ZM12 17L9.5 19.5L12 22L14.5 19.5Z"/></svg>
                             <span>BY BINANCE PAY | باينانس</span>
                         </button>
                     </div>
 
-                    <div id="paypal-buttons-detox" style="margin-top: 20px;"></div>
+                    <div id="paypal-buttons-thermometer" style="margin-top: 20px;"></div>
 
-                    <div class="payment-divider">
-                        <span>OR PAY BY CREDIT CARD | أو بالبطاقة البنكية</span>
-                    </div>
-
-                    <div class="native-card-form" id="card-form-detox">
-                        <div class="input-grp">
-                            <label>رقم البطاقة | Card Number</label>
-                            <div id="card-number-detox" class="card-field-input"></div>
-                        </div>
-                        <div class="input-row">
-                            <div class="input-grp" style="flex:1">
-                                <label>التاريخ | Expiry</label>
-                                <div id="card-expiry-detox" class="card-field-input"></div>
-                            </div>
-                            <div class="input-grp" style="flex:1">
-                                <label>الرمز | CVV</label>
-                                <div id="card-cvv-detox" class="card-field-input"></div>
-                            </div>
-                        </div>
-                        <button id="pay-btn-detox" class="secure-pay">
-                            <span>PAY NOW | الدفع الآن</span>
-                            <span class="secure-badge">🔒 256-bit Secure Encryption</span>
-                        </button>
-                    </div>
+                    <!-- Card form removed to simplify and ensure functionality with standard PayPal buttons which include Card option -->
 
                     <div class="payment-help-box">
                         <p>💡 <b>ملاحظة:</b> إذا لم يتم قبول بطاقتك، يرجى التأكد من توفر الرصيد الكافي أو تفعيل خيار الشراء عبر الإنترنت من تطبيق البنك الخاص بك.</p>
                     </div>
 
                     <div class="trusted-badges">
-                        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
-                        <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="mastercard">
-                        <img src="https://img.icons8.com/color/48/000000/amex.png" alt="amex">
-                        <img src="https://img.icons8.com/color/48/000000/discover.png" alt="discover">
+                         <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
+                         <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="mastercard">
+                         <img src="https://img.icons8.com/color/48/000000/amex.png" alt="amex">
+                         <img src="https://img.icons8.com/color/48/000000/discover.png" alt="discover">
                     </div>
                 </div>
             </div>
@@ -170,33 +146,37 @@
 
         <!-- 🎬 VIDEO EXPLANATION SECTION -->
         <div class="lp-video-section">
-            <div class="lp-badge" style="margin: 0 auto 20px auto;">Watch it in action</div>
-            <h2 class="lp-video-title">شاهد كيف يعمل المنتج <br><span style="color: #94a3b8; font-size: 1.2rem; font-weight: 400;">See How It Transforms Your Health</span></h2>
+            <div class="lp-badge" style="margin: 0 auto 20px auto; background: linear-gradient(135deg, #f59e0b, #d97706);">Watch it in action</div>
+            <h2 class="lp-video-title">طريقة استخدام مقياس الحرارة الذكي <br><span style="color: #94a3b8; font-size: 1.2rem; font-weight: 400;">How to Setup and Use the Smart Thermometer</span></h2>
             
-            <div style="display: flex; justify-content: center; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.3); border: 2px solid rgba(34,197,94,0.3); width: 100%; max-width: 315px; aspect-ratio: 9/16; background: transparent;">
-                <iframe src="https://www.youtube.com/embed/a9WihdD_ivc?autoplay=0&rel=0&modestbranding=1" title="Herbal Detox Foot Soak Video" style="width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="lp-video-container" style="cursor: pointer; background: url('images/thermometer_1.png') center/cover no-repeat; display: flex; align-items: center; justify-content: center; position: relative;" onclick="alert('هذا مجرد مكان مخصص للفيديو (Placeholder).\n\nيرجى رفع فيديو ترويجي خاص بك (على Shopify أو كمقاطع mp4) ووضع رابطه هنا في ملف HTML لتجنب الترويج لفيديوهات المنافسين.')">
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); z-index: 1;"></div>
+                <div style="background: rgba(245,158,11,0.9); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: 0 0 30px rgba(245,158,11,0.6); animation: pulse_yellow 2s infinite;">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                </div>
             </div>
-            <p style="margin-top: 20px; color: #94a3b8; font-size: 0.95rem;">شرح مفصل لكيفية استخدام أعشاب الديتوكس للحصول على أفضل النتائج.<br>A detailed explanation on how to use detox herbs for best results.</p>
+            <style>@keyframes pulse_yellow { 0% { box-shadow: 0 0 0 0 rgba(245,158,11,0.4); } 70% { box-shadow: 0 0 0 12px rgba(245,158,11,0); } 100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); } }</style>
+            <p style="margin-top: 20px; color: #94a3b8; font-size: 0.95rem;">خطوات بسيطة وسريعة لتوصيل الجهاز بهاتفك وتتبع حرارة طفلك.<br>Simple and quick steps to connect the device to your phone and track your baby's temperature.</p>
         </div>
 
         <!-- ⭐ REVIEWS SECTION -->
         <div style="margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">Verified Customer <span style="color:#22c55e;">Results</span></h2>
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">Verified Parent <span style="color:#f59e0b;">Reviews</span></h2>
             <div class="projectGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                 <div class="card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);">
                     <div style="display: flex; gap: 5px; color: #ffc439; margin-bottom: 15px; font-size: 1.2rem;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-style: italic; color: #cbd5e1; font-size: 1.05rem; line-height: 1.6;">"I've been using this for a week and the swelling in my ankles has completely gone down. I feel so much lighter!"</p>
-                    <p style="margin-top: 20px; font-weight: 700; color: #22c55e;">- Susan P. <span style="color: #64748b; font-weight: 400; font-size: 0.8rem; margin-left:10px;">Verified Buyer ✅</span></p>
+                    <p style="font-style: italic; color: #cbd5e1; font-size: 1.05rem; line-height: 1.6;">"As a first-time mom, this has given me so much peace of mind. I no longer have to wake up my baby to check their fever."</p>
+                    <p style="margin-top: 20px; font-weight: 700; color: #f59e0b;">- Jennifer W. <span style="color: #64748b; font-weight: 400; font-size: 0.8rem; margin-left:10px;">Verified Buyer ✅</span></p>
                 </div>
                 <div class="card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);">
                     <div style="display: flex; gap: 5px; color: #ffc439; margin-bottom: 15px; font-size: 1.2rem;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-style: italic; color: #cbd5e1; font-size: 1.05rem; line-height: 1.6;">"The smell is so calming. It's the perfect way to end a stressful day at work. My sleep has significantly improved."</p>
-                    <p style="margin-top: 20px; font-weight: 700; color: #22c55e;">- Robert G. <span style="color: #64748b; font-weight: 400; font-size: 0.8rem; margin-left:10px;">Verified Buyer ✅</span></p>
+                    <p style="font-style: italic; color: #cbd5e1; font-size: 1.05rem; line-height: 1.6;">"Accuracy is impressive. Compared it with my manual thermometer and it was spot on. Highly recommended for any parent!"</p>
+                    <p style="margin-top: 20px; font-weight: 700; color: #f59e0b;">- Michael R. <span style="color: #64748b; font-weight: 400; font-size: 0.8rem; margin-left:10px;">Verified Buyer ✅</span></p>
                 </div>
                 <div class="card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);">
                     <div style="display: flex; gap: 5px; color: #ffc439; margin-bottom: 15px; font-size: 1.2rem;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-style: italic; color: #cbd5e1; font-size: 1.05rem; line-height: 1.6;">"Honestly skeptical at first, but after the third soak, I felt a real difference in my energy levels. Buying more for my family!"</p>
-                    <p style="margin-top: 20px; font-weight: 700; color: #22c55e;">- Linda M. <span style="color: #64748b; font-weight: 400; font-size: 0.8rem; margin-left:10px;">Verified Buyer ✅</span></p>
+                    <p style="font-style: italic; color: #cbd5e1; font-size: 1.05rem; line-height: 1.6;">"The app is so easy to use. I love that I can check the graph over the night. Best investment this year."</p>
+                    <p style="margin-top: 20px; font-weight: 700; color: #f59e0b;">- Maria S. <span style="color: #64748b; font-weight: 400; font-size: 0.8rem; margin-left:10px;">Verified Buyer ✅</span></p>
                 </div>
             </div>
         </div>
@@ -205,27 +185,27 @@
         <div class="faq-section" style="max-width: 900px; margin: 80px auto; padding: 0 20px;">
             <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2rem;">Frequently Asked Questions</h2>
             <div class="faq-item" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; margin-bottom: 15px; padding: 20px;">
-                <div class="faq-question" style="font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 10px;">How often should I use the detox soak?</div>
-                <div class="faq-answer" style="color: #94a3b8; line-height: 1.6;">For best results, we recommend using it 3-4 times a week, ideally before bedtime for maximum relaxation.</div>
+                <div class="faq-question" style="font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 10px;">How does the thermometer attach to the baby?</div>
+                <div class="faq-answer" style="color: #94a3b8; line-height: 1.6;">It uses a medical-grade, clinical adhesive that is gentle on baby's sensitive skin. It stays secure throughout the night.</div>
             </div>
             <div class="faq-item" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; margin-bottom: 15px; padding: 20px;">
-                <div class="faq-question" style="font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 10px;">Are the ingredients 100% natural?</div>
-                <div class="faq-answer" style="color: #94a3b8; line-height: 1.6;">Yes, our soak is made from authentic herbal extracts including Ginger oil, Saffron, and Mugwort with zero chemicals.</div>
+                <div class="faq-question" style="font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 10px;">Does it work with any smartphone?</div>
+                <div class="faq-answer" style="color: #94a3b8; line-height: 1.6;">Yes, it is compatible with both iOS and Android through our professional app.</div>
             </div>
             <div class="faq-item" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; margin-bottom: 15px; padding: 20px;">
-                <div class="faq-question" style="font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 10px;">What is your shipping policy?</div>
-                <div class="faq-answer" style="color: #94a3b8; line-height: 1.6;">We ship worldwide in 7-14 business days. Tracking numbers are provided for every order via email.</div>
+                <div class="faq-question" style="font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 10px;">How accurate is the measurement?</div>
+                <div class="faq-answer" style="color: #94a3b8; line-height: 1.6;">It provides high-precision clinical measurements with an accuracy of ±0.1°C.</div>
             </div>
-        </div>
-    </section>
-
-    <!-- Floating Telegram Button -->
+            <div class="faq-item" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; margin-bottom: 15px; padding: 20px;">
+                <div class="faq-q    <!-- Floating Telegram Button -->
     <a href="https://t.me/abdellah19?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A8%D9%83%20%D9%81%D9%8A%20Health2026!%20%F0%9F%91%8B%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%D9%83%D9%85%20%D9%88%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B6%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9.%0AWelcome%20to%20Health2026!%20I%20would%20like%20to%20inquire%20about%20your%20products%20and%20offers.%0ABienvenue%20sur%20Health2026%20!%20Je%20souhaite%20me%20renseigner%20sur%20vos%20produits%20et%20offres." class="telegram-float" target="_blank" style="position: fixed; bottom: 100px; right: 30px; width: 60px; height: 60px; background-color: #0088cc; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 9999; display: flex; align-items: center; justify-content: center; text-decoration: none;">
         <img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="Telegram Support" style="width: 40px; height: 40px;">
     </a>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/212641617786?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A8%D9%83%20%D9%81%D9%8A%20Health2026!%20%F0%9F%91%8B%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%D9%83%D9%85%20%D9%88%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B6%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9.%0AWelcome%20to%20Health2026!%20I%20would%20like%20to%20inquire%20about%20your%20products%20and%20offers.%0ABienvenue%20sur%20Health2026%20!%20Je%20souhaite%20me%20renseigner%20sur%20vos%20produits%20et%20offres." class="whatsapp-float" target="_blank" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 9999; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp Support" style="width: 40px; height: 40px;">
+    </a>ground-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 9999; display: flex; align-items: center; justify-content: center; text-decoration: none;">
         <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp Support" style="width: 40px; height: 40px;">
     </a>
 
@@ -238,11 +218,11 @@
         </div>
         <a href="#" style="margin-top: 20px; display: inline-block;">Back to top</a>
     </footer>
-    <script src="js/script.js?v=100.0"></script>
+    <script src="js/checkout.js?v=200.0"></script>
 
     <script>
-        initAdvancedCardFields('Herbal Detox Foot Soak Bundle', '24.99', '#paypal-buttons-detox', '#card-number-detox', '#card-expiry-detox', '#card-cvv-detox', '#pay-btn-detox');
-        initOtherPayments('Herbal Detox Foot Soak Bundle', '24.99', null, '#binance-btn-detox');
+        initAdvancedCardFields('Smart Baby Thermometer PRO', '39.99', '#paypal-buttons-thermometer');
+        initOtherPayments('Smart Baby Thermometer PRO', '39.99', null, '#binance-btn-thermometer');
     </script>
 </body>
 </html>

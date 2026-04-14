@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="css/style.css?v=70.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- PayPal SDK with Advanced Card Fields -->
+    <!-- PayPal SDK -->
     <script
-        src="https://www.paypal.com/sdk/js?client-id=AcbBKz68JfFF5dYLJc0UUeRbBu5LF810Xa3vvMCJ-W9P0QVvUJ2PDTjXYoEUZZTCeIizq5Wqx2LppUG6&currency=USD&components=buttons,card-fields"></script>
+        src="https://www.paypal.com/sdk/js?client-id=AcbBKz68JfFF5dYLJc0UUeRbBu5LF810Xa3vvMCJ-W9P0QVvUJ2PDTjXYoEUZZTCeIizq5Wqx2LppUG6&currency=USD&components=buttons"></script>
 
     <style>
         .checkout-container { background: #0f172a !important; border: 2px solid #22c55e !important; padding: 25px !important; border-radius: 20px !important; display: block !important; }
@@ -117,7 +118,7 @@
                 </div>
 
                 <!-- 🛒 CHECKOUT SECTION -->
-                <div class="checkout-container" id="checkout-section" style="margin-top: 10px;">
+                <div class="checkout-container reveal" id="checkout-section" style="margin-top: 10px; opacity: 1 !important; visibility: visible !important;">
                     <h3 style="margin-bottom:20px; text-align:center; color: #fff;">إتمام الطلب بأمان | Secure Checkout</h3>
                     
                     <div class="countdown-box" style="margin-bottom: 25px;">
@@ -134,30 +135,7 @@
 
                     <div id="paypal-buttons-kneepads" style="margin-top: 20px;"></div>
 
-                    <div class="payment-divider">
-                        <span>OR PAY BY CREDIT CARD | أو بالبطاقة البنكية</span>
-                    </div>
-
-                    <div class="native-card-form" id="card-form-kneepads">
-                        <div class="input-grp">
-                            <label>رقم البطاقة | Card Number</label>
-                            <div id="card-number-kneepads" class="card-field-input"></div>
-                        </div>
-                        <div class="input-row">
-                            <div class="input-grp" style="flex:1">
-                                <label>التاريخ | Expiry</label>
-                                <div id="card-expiry-kneepads" class="card-field-input"></div>
-                            </div>
-                            <div class="input-grp" style="flex:1">
-                                <label>الرمز | CVV</label>
-                                <div id="card-cvv-kneepads" class="card-field-input"></div>
-                            </div>
-                        </div>
-                        <button id="pay-btn-kneepads" class="secure-pay">
-                            <span>PAY NOW | الدفع الآن</span>
-                            <span class="secure-badge">🔒 256-bit Secure Encryption</span>
-                        </button>
-                    </div>
+                    <!-- Card form removed to simplify and ensure functionality with standard PayPal buttons which include Card option -->
 
                     <div class="payment-help-box">
                         <p>💡 <b>ملاحظة:</b> إذا لم يتم قبول بطاقتك، يرجى التأكد من توفر الرصيد الكافي أو تفعيل خيار الشراء عبر الإنترنت من تطبيق البنك الخاص بك.</p>
@@ -252,10 +230,10 @@
         </div>
         <a href="#" style="margin-top: 20px; display: inline-block;">Back to top</a>
     </footer>
-    <script src="js/script.js?v=100.0"></script>
+    <script src="js/checkout.js?v=200.0"></script>
 
     <script>
-        initAdvancedCardFields('Pro Honeycomb Knee Pads Pair', '1.00', '#paypal-buttons-kneepads', '#card-number-kneepads', '#card-expiry-kneepads', '#card-cvv-kneepads', '#pay-btn-kneepads');
+        initAdvancedCardFields('Pro Honeycomb Knee Pads Pair', '1.00', '#paypal-buttons-kneepads');
         initOtherPayments('Pro Honeycomb Knee Pads Pair', '1.00', null, '#binance-btn-kneepads');
     </script>
 </body>
