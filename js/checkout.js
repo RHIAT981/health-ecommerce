@@ -99,60 +99,26 @@ function initAdvancedCardFields(itemName, amount, btnId) {
     const container = document.querySelector(btnId);
     if (!container) return;
 
-    // Check if card-fields component is available in SDK
-    if (window.paypal && paypal.CardFields) {
-        const cardFields = paypal.CardFields({
-            createOrder: function (data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: { value: amount },
-                        description: itemName
-                    }]
-                });
-            },
-            onApprove: function (data, actions) {
-                return actions.order.capture().then(function (details) {
-                    window.location.href = 'thanks.html';
-                });
-            },
-            onError: function (err) {
-                console.error('Card Fields Error:', err);
-                // Fallback if needed
-            }
-        });
-
-        if (cardFields.isEligible()) {
-            const nameField = cardFields.NameField();
-            const numberField = cardFields.NumberField();
-            const expiryField = cardFields.ExpiryField();
-            const cvvField = cardFields.CVVField();
-
-            // We assume the containers exist in the HTML nearby
-            // If they don't, we will render standard buttons as fallback
-            try {
-                numberField.render('#card-number-container');
-                expiryField.render('#card-expiry-container');
-                cvvField.render('#card-cvv-container');
-
-                const submitBtn = document.querySelector('#card-field-submit');
-                if (submitBtn) {
-                    submitBtn.onclick = () => {
-                        cardFields.submit().catch(err => {
-                            console.error('Submit Error:', err);
-                            alert('Payment failed. Please check your card details.');
-                        });
-                    };
-                }
-            } catch (e) {
-                console.warn('Containers not found, falling back to standard buttons');
-                renderStandardButtons(itemName, amount, btnId);
-            }
-        } else {
-            renderStandardButtons(itemName, amount, btnId);
-        }
-    } else {
-        renderStandardButtons(itemName, amount, btnId);
-    }
+    // To ensure the amount is ALWAYS visible immediately, we use the direct PayPal.me link
+    // which shows your profile and the amount before the user even logs in.
+    container.innerHTML = `
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <a href="https://paypal.me/health2026/${amount}USD" target="_blank" class="paypal-btn" style="background: #ffc439; color: #111; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid #e2a400;">
+                <img src="https://img.icons8.com/color/48/000000/paypal.png" width="24" height="24">
+                <span>PAY $${amount} WITH PAYPAL</span>
+            </a>
+            
+            <a href="https://paypal.me/health2026/${amount}USD" target="_blank" class="credit-btn" style="background: #1e293b; color: #fff; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid #334155;">
+                <img src="https://img.icons8.com/color/48/000000/visa.png" width="24" height="24">
+                <img src="https://img.icons8.com/color/48/000000/mastercard.png" width="24" height="24">
+                <span>PAY $${amount} WITH BANK CARD</span>
+            </a>
+        </div>
+    `;
+    
+    // Hide the direct card entry form as it was causing the "generic login" or white space issues
+    const cardForm = document.querySelector('.native-card-form');
+    if (cardForm) cardForm.style.display = 'none';
 }
 
 function renderStandardButtons(itemName, amount, btnId) {
@@ -170,34 +136,10 @@ function initOtherPayments(itemName, amount, cardBtnId, binanceBtnId) {
     }
 
     const cardBtn = document.querySelector(cardBtnId);
-    if (cardBtn && window.paypal) {
-        // We replace the custom card button with a real PayPal Debit/Credit button
-        cardBtn.innerHTML = '';
-        cardBtn.style.background = 'transparent';
-        cardBtn.style.border = 'none';
-        cardBtn.style.padding = '0';
-        
-        paypal.Buttons({
-            fundingSource: paypal.FUNDING.CARD,
-            style: {
-                layout: 'vertical',
-                shape: 'rect',
-                height: 55
-            },
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: { value: amount },
-                        description: itemName
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    window.location.href = 'thanks.html';
-                });
-            }
-        }).render(cardBtnId);
+    if (cardBtn) {
+        cardBtn.onclick = () => {
+            window.open(`https://paypal.me/health2026/${amount}USD`, '_blank');
+        };
     }
 }
 
