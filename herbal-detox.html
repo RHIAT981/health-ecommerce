@@ -126,11 +126,13 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f3ba2f"><path d="M12 2L9.5 4.5L12 7L14.5 4.5ZM5 9.5L2.5 12L5 14.5L7.5 12ZM19 9.5L16.5 12L19 14.5L21.5 12ZM12 9.5L9.5 12L12 14.5L14.5 12ZM12 17L9.5 19.5L12 22L14.5 19.5Z"/></svg>
                             <span>BY BINANCE PAY | باينانس</span>
                         </button>
+                        <button class="credit-btn" id="card-btn-detox">
+                            <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Card">
+                            <span>BY BANK CARD | بالبطاقة البنكية</span>
+                        </button>
                     </div>
 
                     <div id="paypal-buttons-detox" style="margin-top: 20px;"></div>
-
-                    <!-- Card form removed to simplify and ensure functionality with standard PayPal buttons which include Card option -->
 
                     <div class="payment-help-box">
                         <p style="margin-bottom: 10px;">💡 <b>ملاحظة:</b> إذا لم يتم قبول بطاقتك، يرجى التأكد من توفر الرصيد الكافي أو تفعيل خيار الشراء عبر الإنترنت من تطبيق البنك الخاص بك.</p>
@@ -222,7 +224,7 @@
 
     <script>
         initAdvancedCardFields('Herbal Detox Foot Soak Bundle', '24.99', '#paypal-buttons-detox');
-        initOtherPayments('Herbal Detox Foot Soak Bundle', '24.99', null, '#binance-btn-detox');
+        initOtherPayments('Herbal Detox Foot Soak Bundle', '24.99', '#card-btn-detox', '#binance-btn-detox');
     </script>
 </body>
 </html>

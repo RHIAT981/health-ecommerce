@@ -109,10 +109,17 @@ function renderStandardButtons(itemName, amount, btnId) {
     renderFallbackButton(container, itemName, amount);
 }
 
-function initOtherPayments(itemName, amount, payeerBtnId, binanceBtnId) {
+function initOtherPayments(itemName, amount, cardBtnId, binanceBtnId) {
     const binanceBtn = document.querySelector(binanceBtnId);
     if (binanceBtn) {
         binanceBtn.onclick = () => showBinanceModal(itemName, amount);
+    }
+
+    const cardBtn = document.querySelector(cardBtnId);
+    if (cardBtn) {
+        cardBtn.onclick = () => {
+            window.open(getPayPalEmailLink(itemName, amount), '_blank');
+        };
     }
 }
 
