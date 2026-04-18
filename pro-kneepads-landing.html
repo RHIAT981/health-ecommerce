@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro KneePads Ultra - Performance & Support | Health2026</title>
+    <meta name="description" content="Ultimate knee protection and performance boost. Medical grade support for athletes and everyday comfort.">
+    <link rel="stylesheet" href="css/style.css?v=31.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://www.paypal.com/sdk/js?client-id=AcbBKz68JfFF5dYLJc0UUeRbBu5LF810Xa3vvMCJ-W9P0QVvUJ2PDTjXYoEUZZTCeIizq5Wqx2LppUG6&currency=USD&components=buttons,card-fields"></script>
+    <style>
+        :root {
+            --accent-new: #3b82f6;
+            --accent-glow-new: rgba(59, 130, 246, 0.4);
+        }
+        body { font-family: 'Inter', sans-serif; background: #020617; }
+        h1, h2, h3, .logoText { font-family: 'Outfit', sans-serif; }
+        
+        .hero-premium {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 140px 10%;
+            background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+            gap: 50px;
+        }
+        
+        .hero-content { flex: 1; text-align: left; }
+        .hero-image { flex: 1; position: relative; }
+        .hero-image img { 
+            width: 100%; 
+            border-radius: 40px; 
+            box-shadow: 0 40px 120px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .floating-badge {
+            position: absolute;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            padding: 20px 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: float 5s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(10px, -20px); }
+        }
+
+        .section-tag {
+            color: var(--accent-new);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .feature-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 24px;
+            transition: 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-10px); background: rgba(30, 41, 59, 0.6); border-color: var(--accent-new); }
+        
+        .review-card {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 40px;
+            border-radius: 32px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .video-container {
+            aspect-ratio: 16/9;
+            width: 100%;
+            border-radius: 40px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 1000px) {
+            .hero-premium { flex-direction: column; text-align: center; padding-top: 160px; }
+            .hero-content { text-align: center; }
+        }
+    </style>
+</head>
+<body class="hidden">
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="cssLogo">
+                <div class="logoIcon" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="logoText">Health<span class="logoHighlight" style="color: var(--accent-new);">2026</span></div>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#reviews">Results</a></li>
+                <li><a href="#order" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">Buy Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-premium reveal">
+            <div class="hero-content">
+                <span class="section-tag">High Performance Gear</span>
+                <h1 style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 800; margin-bottom: 25px;">Pro KneePads <span style="color: var(--accent-new);">Ultra</span></h1>
+                <p style="font-size: 1.3rem; color: #64748b; margin-bottom: 45px; max-width: 550px;">Unleash your potential with medical-grade compression and advanced impact protection. Designed for athletes, built for longevity.</p>
+                <div class="buttons" style="justify-content: flex-start;">
+                    <a href="#order" class="btn" style="background: var(--accent-new); padding: 22px 50px; font-size: 1.1rem; border-radius: 18px; box-shadow: 0 15px 30px var(--accent-glow-new);">CLAIM YOUR 50% DISCOUNT</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/pro_kneepads_product.png" alt="Pro KneePads">
+                <div class="floating-badge" style="top: -20px; right: 20px;">
+                    <span style="font-size: 1.5rem;">⚡</span>
+                    <div>
+                        <div style="font-size: 0.7rem; opacity: 0.6; text-transform: uppercase;">Performance</div>
+                        <div>+40% Stability</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGY -->
+        <section id="features" class="reveal" style="padding: 100px 10%;">
+            <div style="text-align: center; margin-bottom: 80px;">
+                <span class="section-tag">The Technology</span>
+                <h2 style="font-size: 3rem;">Engineered <span style="color: var(--accent-new);">To Protect</span></h2>
+            </div>
+            <div class="projectGrid">
+                <div class="feature-card">
+                    <h3 style="color: var(--accent-new); margin-bottom: 15px;">3D Weaving Tech</h3>
+                    <p>High-precision 3D cutting technology of knitting, ergonomic 360-degree body curve perfect fit knee.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="color: var(--accent-new); margin-bottom: 15px;">Silicon Impact Pad</h3>
+                    <p>Anatomically contoured patella gel pads provides comfort and reduces stress during movement.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="color: var(--accent-new); margin-bottom: 15px;">Spring Support</h3>
+                    <p>Dual metal spring stabilizers fit tightly with your knee joint to enhance lateral support.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIFESTYLE VIDEO -->
+        <section class="reveal" style="padding: 100px 10%; background: #000;">
+            <div class="aboutContainer">
+                <div style="flex:1;">
+                    <span class="section-tag">Real World Use</span>
+                    <h2>Built for <span style="color: var(--accent-new);">Intense Action</span></h2>
+                    <p style="font-size: 1.2rem; margin: 30px 0;">Whether you are a professional athlete or recovery from an injury, Pro KneePads Ultra provides the confidence you need to push harder.</p>
+                    <div class="video-container" style="margin-top: 40px;">
+                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/P_fUOn3mR1w" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div style="flex:1;">
+                    <img src="images/pro_kneepads_lifestyle.png" style="width: 100%; border-radius: 40px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section id="reviews" class="reveal" style="padding: 120px 10%;">
+             <div style="text-align: center; margin-bottom: 80px;">
+                <span class="section-tag">Results</span>
+                <h2>Trusted by <span style="color: var(--accent-new);">Pros</span></h2>
+            </div>
+            <div class="projectGrid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                <div class="review-card">
+                    <div style="display: flex; gap: 2px; color: #f59e0b; margin-bottom: 20px;">★★★★★</div>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px;">"The support is incredible. I had chronic knee pain while running, and these pads changed everything. Highly recommend for any runner!"</p>
+                    <div style="display:flex; align-items:center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--accent-new); display: flex; align-items: center; justify-content: center; font-weight: 800;">JD</div>
+                        <div>
+                            <div style="font-weight: 800;">John Doe</div>
+                            <div style="font-size: 0.8rem; color: #64748b;">Marathon Runner</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div style="display: flex; gap: 2px; color: #f59e0b; margin-bottom: 20px;">★★★★★</div>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px;">"Quality is top-notch. Breathable material and they don't slide down like cheaper versions. Worth every penny."</p>
+                    <div style="display:flex; align-items:center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #1e293b; display: flex; align-items: center; justify-content: center; font-weight: 800;">AS</div>
+                        <div>
+                            <div style="font-weight: 800;">Alex Smith</div>
+                            <div style="font-size: 0.8rem; color: #64748b;">Basketball Player</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ORDER -->
+        <section id="order" class="reveal" style="padding: 120px 10%; background: linear-gradient(to bottom, #020617, #0f172a);">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 4rem;">Don't Let Pain <span style="color: var(--accent-new);">Stop You</span></h2>
+                <div style="font-size: 2.5rem; font-weight: 800; margin: 40px 0;">
+                    <span style="text-decoration: line-through; color: #475569; font-size: 1.5rem;">$59.99</span>
+                    <span style="color: #fff; margin-left: 20px;">$29.99</span>
+                    <div style="font-size: 1rem; color: var(--accent-new); margin-top: 10px;">LIMITED TIME 50% OFF</div>
+                </div>
+                
+                <div style="background: rgba(15, 23, 42, 0.8); padding: 40px; border-radius: 40px; border: 1px solid var(--accent-new); max-width: 500px; margin: 0 auto;">
+                     <!-- CHECKOUT -->
+                     <div style="margin-bottom: 30px;">
+                        <a href="https://paypal.me/health2026/29.99USD" 
+                           target="_blank" 
+                           style="display: block; background: #ffc439; color: #111; text-decoration: none; padding: 20px; border-radius: 15px; font-weight: 900; font-size: 1.2rem;">
+                            Pay with PayPal
+                        </a>
+                     </div>
+                     <div id="card-btn" style="min-height: 50px;"></div>
+                     <p style="margin-top: 20px; font-size: 0.8rem; color: #64748b;">✓ SSL Secure & Encrypted Checkout</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 60px 10%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p>© 2026 Health2026 Sports. All rights reserved.</p>
+    </footer>
+
+    <script src="js/checkout.js?v=9999"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        if (window.initAdvancedCardFields) {
+            initAdvancedCardFields('Pro KneePads Ultra', '29.99', '#card-btn');
+        }
+    </script>
+</body>
+</html>

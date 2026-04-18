@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Detox - Premium Herbal Cleanse | Health2026</title>
+    <meta name="description" content="Elevate your wellness with Zenith Detox. The premium herbal tea designed for natural energy and total body rejuvenation.">
+    <link rel="stylesheet" href="css/style.css?v=31.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://www.paypal.com/sdk/js?client-id=AcbBKz68JfFF5dYLJc0UUeRbBu5LF810Xa3vvMCJ-W9P0QVvUJ2PDTjXYoEUZZTCeIizq5Wqx2LppUG6&currency=USD&components=buttons,card-fields"></script>
+    <style>
+        :root {
+            --accent-new: #10b981;
+            --accent-glow-new: rgba(16, 185, 129, 0.4);
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .logoText { font-family: 'Outfit', sans-serif; }
+        
+        .hero-premium {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 140px 10%;
+            background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 40%);
+            gap: 50px;
+        }
+        
+        .hero-content { flex: 1; text-align: left; }
+        .hero-image { flex: 1; position: relative; }
+        .hero-image img { 
+            width: 100%; 
+            border-radius: 30px; 
+            box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .floating-badge {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: float 4s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .section-tag {
+            color: var(--accent-new);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .review-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 40px;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        .review-card:hover { border-color: var(--accent-new); background: rgba(255,255,255,0.05); }
+        .review-user { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .review-user img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+        
+        .video-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+            border: 8px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s;
+        }
+        .video-container:hover .video-overlay { opacity: 0; pointer-events: none; }
+        
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        @media (max-width: 900px) {
+            .hero-premium, .checkout-grid { flex-direction: column; grid-template-columns: 1fr; text-align: center; }
+            .hero-content { text-align: center; }
+        }
+    </style>
+</head>
+<body class="hidden">
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="cssLogo">
+                <div class="logoIcon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="logoText">Health<span class="logoHighlight" style="color: var(--accent-new);">2026</span></div>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" style="color: var(--accent-new);">Store</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#order">Order Now</a></li>
+            </ul>
+            <button id="themeToggle">☀️</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-premium reveal">
+            <div class="hero-content">
+                <span class="section-tag">Premium Wellness</span>
+                <h1 style="font-size: 5rem; margin-bottom: 20px; line-height: 1;">Zenith <span style="color: var(--accent-new);">Detox</span></h1>
+                <p style="font-size: 1.4rem; color: #94a3b8; margin-bottom: 40px; max-width: 500px;">Experience the ultimate cellular rejuvenation. A masterfully blended herbal complex designed to detoxify, energize, and balance your body.</p>
+                <div class="buttons" style="justify-content: flex-start;">
+                    <a href="#order" class="btn" style="background: var(--accent-new); padding: 20px 45px; font-size: 1.1rem; border-radius: 15px;">GET STARTED NOW</a>
+                    <a href="#video" class="btn outline" style="border-color: var(--accent-new); color: var(--accent-new) !important; padding: 20px 45px; font-size: 1.1rem; border-radius: 15px;">WATCH DEMO</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/herbal_detox_product.png" alt="Zenith Detox Product">
+                <div class="floating-badge" style="top: 10%; right: -20px; animation-delay: 0s;">
+                    <span style="font-size: 2rem;">🌟</span>
+                    <div>
+                        <div style="font-size: 0.8rem; opacity: 0.7;">Rating</div>
+                        <div>4.9/5 Official</div>
+                    </div>
+                </div>
+                <div class="floating-badge" style="bottom: 15%; left: -30px; animation-delay: 1s;">
+                    <span style="font-size: 2rem;">🌿</span>
+                    <div>
+                        <div style="font-size: 0.8rem; opacity: 0.7;">Purity</div>
+                        <div>100% Organic</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIFESTYLE / INFO -->
+        <section class="reveal" style="padding: 120px 10%;">
+            <div class="aboutContainer">
+                <div style="flex: 1;">
+                    <img src="images/herbal_detox_lifestyle.png" style="width: 100%; border-radius: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
+                </div>
+                <div style="flex: 1.2;">
+                    <span class="section-tag">Why Zenith?</span>
+                    <h2 style="text-align: left; margin-bottom: 30px;">Engineered for <span style="color: var(--accent-new);">Your Health</span></h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px;">Most detox products use harsh chemicals. Zenith Detox uses bio-active botanical extracts that work with your natural rhythms to flush toxins and restore metabolic efficiency.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; gap: 15px; margin-bottom: 20px; font-size: 1.1rem;">
+                            <span style="color: var(--accent-new);">✦</span> Metabolism Booster & Natural Energy
+                        </li>
+                        <li style="display: flex; gap: 15px; margin-bottom: 20px; font-size: 1.1rem;">
+                            <span style="color: var(--accent-new);">✦</span> Digestive Harmony & Bloating Relief
+                        </li>
+                        <li style="display: flex; gap: 15px; margin-bottom: 20px; font-size: 1.1rem;">
+                            <span style="color: var(--accent-new);">✦</span> Rich in Antioxidants & Skin Clarity
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO SECTION -->
+        <section id="video" class="reveal" style="text-align: center; padding: 100px 5%; background: rgba(16, 185, 129, 0.02);">
+            <span class="section-tag">Demonstration</span>
+            <h2 style="margin-bottom: 50px;">See the <span style="color: var(--accent-new);">Transformation</span></h2>
+            <div class="video-container">
+                <div class="video-overlay">
+                    <div style="background: var(--accent-new); width: 80px; height: 80px; border-radius: 50%; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 0 30px var(--accent-glow-new);">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
+                <!-- Placeholder for actual marketing video -->
+                <iframe width="100%" height="562" src="https://www.youtube.com/embed/P_fUOn3mR1w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- REVIEWS SECTION -->
+        <section id="reviews" class="reveal" style="padding: 120px 10%;">
+            <div style="text-align: center; margin-bottom: 80px;">
+                <span class="section-tag">Testimonials</span>
+                <h2>What Our <span style="color: var(--accent-new);">Community</span> Says</h2>
+            </div>
+            <div class="projectGrid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="review-card">
+                    <div class="review-user">
+                        <img src="images/avatar_1.png" alt="Sarah J.">
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem;">Sarah Jenkins</div>
+                            <div style="color: var(--accent-new);">Verified Customer</div>
+                        </div>
+                    </div>
+                    <div style="color: #f59e0b; margin-bottom: 15px; font-size: 1.2rem;">★★★★★</div>
+                    <p style="font-style: italic; color: #fff; font-size: 1.1rem;">"I've tried every detox tea on the market, but Zenith is different. No jitters, just pure sustained energy and I feel so much lighter after just 7 days."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-user">
+                        <!-- Placeholder avatar if not generated -->
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: #1e293b; display: flex; align-items: center; justify-content: center; font-weight: 800;">ML</div>
+                        <div>
+                            <div style="font-weight: 800; font-size: 1.1rem;">Michael L.</div>
+                            <div style="color: var(--accent-new);">Verified Customer</div>
+                        </div>
+                    </div>
+                    <div style="color: #f59e0b; margin-bottom: 15px; font-size: 1.2rem;">★★★★★</div>
+                    <p style="font-style: italic; color: #fff; font-size: 1.1rem;">"Finally a product that works. My bloating is gone and my skin is clearer than ever. Truly a premium experience from packaging to results."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHECKOUT SECTION -->
+        <section id="order" class="reveal" style="padding: 120px 10%; background: #000; border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="checkout-grid">
+                <div>
+                    <span class="section-tag">Limited Offer</span>
+                    <h2 style="text-align: left; margin-bottom: 20px;">Secure Your <span style="color: var(--accent-new);">Zenith Supply</span></h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 40px;">Order now and get 40% OFF + Free Worldwide Shipping. Join 50,000+ people who upgraded their wellness routine.</p>
+                    
+                    <div class="price-box" style="background: rgba(16, 185, 129, 0.1); border: 1px dashed var(--accent-new); padding: 30px; border-radius: 20px; margin-bottom: 40px;">
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <span style="font-size: 3.5rem; font-weight: 800; color: #fff;">$49.00</span>
+                            <div>
+                                <div style="text-decoration: line-through; color: #64748b; font-size: 1.5rem;">$89.00</div>
+                                <div style="color: var(--accent-new); font-weight: 700;">SAVE $40 TODAY</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="display: flex; align-items: center; gap: 10px; color: #94a3b8;">
+                            <span style="color: var(--accent-new);">✓</span> Free Shipping Worldwide
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; color: #94a3b8;">
+                            <span style="color: var(--accent-new);">✓</span> 30-Day Money Back Guarantee
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; color: #94a3b8;">
+                            <span style="color: var(--accent-new);">✓</span> Secure Encrypted Checkout
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-container" style="background: #0f172a; padding: 40px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 40px 80px rgba(0,0,0,0.4);">
+                     <!-- 🚀 SECURE CHECKOUT PANEL -->
+                     <div id="checkout-panel">
+                        <div style="margin-bottom: 30px; text-align: center;">
+                            <img src="https://img.icons8.com/ios-filled/100/10b981/lock.png" width="40" style="margin-bottom: 10px;">
+                            <h3 style="margin: 0;">Express Checkout</h3>
+                        </div>
+                        
+                        <!-- PAYPAL -->
+                        <div style="margin-bottom: 25px;">
+                            <a href="https://paypal.me/health2026/49.00USD" 
+                               target="_blank" 
+                               style="display: flex; align-items: center; justify-content: center; background: #ffc439; color: #111; text-decoration: none; padding: 18px; border-radius: 15px; font-weight: 900; gap: 10px; font-size: 1.1rem; box-shadow: 0 10px 20px rgba(255,196,57,0.2); transition: 0.3s;">
+                                <img src="https://img.icons8.com/color/48/000000/paypal.png" width="24">
+                                <span>PAY VIA PAYPAL.ME</span>
+                            </a>
+                        </div>
+
+                        <!-- CARDS -->
+                        <div style="margin-bottom: 25px;">
+                            <label style="color: #64748b; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block;">Debit or Credit Card</label>
+                            <div id="card-button-container" style="min-height: 50px;"></div>
+                        </div>
+
+                        <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+                            <img src="https://img.icons8.com/color/48/000000/visa.png" width="35">
+                            <img src="https://img.icons8.com/color/48/000000/mastercard.png" width="35">
+                            <img src="https://img.icons8.com/color/48/000000/amex.png" width="35">
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 60px 5%; background: #000; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: #475569;">© 2026 Health2026 Store. All rights reserved.</p>
+        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 30px;">
+            <a href="shipping.html" style="color: #94a3b8; text-decoration: none;">Shipping Policy</a>
+            <a href="index.html" style="color: #94a3b8; text-decoration: none;">Support</a>
+            <a href="index.html" style="color: #94a3b8; text-decoration: none;">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- SHARED SCRIPTS -->
+    <script src="js/checkout.js?v=9999"></script>
+    <script>
+        // Reveal animation logic
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Initialize Checkout
+        if (window.initAdvancedCardFields) {
+            initAdvancedCardFields('Zenith Detox Premium', '49.00', '#card-button-container');
+        }
+    </script>
+</body>
+</html>
