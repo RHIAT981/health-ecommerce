@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Baby Thermometer PRO - Accurate & Instant | Health2026</title>
     <meta name="description" content="The world's most accurate non-contact medical grade thermometer. Instant results for your family's safety.">
-    <link rel="stylesheet" href="css/style.css?v=404.0">
+    <link rel="stylesheet" href="css/style.css?v=505.0">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://www.paypal.com/sdk/js?client-id=AcbBKz68JfFF5dYLJc0UUeRbBu5LF810Xa3vvMCJ-W9P0QVvUJ2PDTjXYoEUZZTCeIizq5Wqx2LppUG6&currency=USD&components=buttons,card-fields"></script>
     <style>
@@ -13,257 +13,138 @@
             --accent-new: #14b8a6;
             --accent-glow-new: rgba(20, 184, 166, 0.4);
         }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); transition: background 0.4s, color 0.4s; }
-        .hero-premium, section { background: var(--bg); color: var(--text); }
-        h1, h2, h3, .logoText { font-family: 'Outfit', sans-serif; }
         
+        /* Reset and Base */
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); transition: background 0.4s; margin: 0; overflow-x: hidden; }
+        h1, h2, h3, .logoText { font-family: 'Outfit', sans-serif; margin: 0; }
+        
+        /* Robust Header */
+        .landing-header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+            background: var(--bg); border-bottom: 1px solid var(--card-border);
+            padding: 10px 5%; backdrop-filter: blur(15px);
+        }
+        .header-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-items { display: flex; align-items: center; gap: 20px; }
+        .nav-links { display: flex; list-style: none; gap: 20px; margin: 0; padding: 0; align-items: center; }
+        
+        /* Hero Section */
         .hero-premium {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 140px 10%;
-            background: radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.1) 0%, transparent 40%);
-            gap: 50px;
+            min-height: 90vh; display: flex; align-items: center;
+            padding: 120px 5% 60px; gap: 40px;
+            max-width: 1200px; margin: 0 auto;
         }
-        
-        .hero-content { flex: 1; text-align: left; }
+        .hero-content { flex: 1; }
         .hero-image { flex: 1; position: relative; }
-        .hero-image img { 
-            width: 100%; 
-            border-radius: 40px; 
-            box-shadow: 0 40px 100px rgba(20, 184, 166, 0.2);
-            border: 1px solid rgba(20, 184, 166, 0.1);
-        }
+        .hero-image img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
         
-        .floating-badge {
-            position: absolute;
-            background: #fff;
-            padding: 15px 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            font-weight: 700;
-            color: #1e293b;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            animation: float 4s infinite ease-in-out;
-            border: 1px solid #f1f5f9;
-        }
+        .section-tag { color: var(--accent-new); text-transform: uppercase; letter-spacing: 2px; font-weight: 800; font-size: 0.85rem; margin-bottom: 15px; display: block; }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+        /* Responsive Grid */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        
+        .feature-box { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid var(--card-border); }
+        .checkout-box { background: var(--card); padding: 30px; border-radius: 30px; border: 2px solid var(--accent-new); }
+        
+        /* Mobile Overrides - CRITICAL */
+        @media (max-width: 768px) {
+            .hero-premium { flex-direction: column; text-align: center; padding-top: 100px; }
+            .grid-3, .grid-2 { grid-template-columns: 1fr !important; gap: 30px; }
+            .nav-links { display: none; } /* Hide complicated links on mobile header */
+            .header-container { justify-content: space-between; }
+            h1 { font-size: 2.8rem !important; }
+            .hero-content { order: 1; }
+            .hero-image { order: 2; width: 100%; }
+            .checkout-box { padding: 20px; }
         }
 
-        .section-tag {
-            color: var(--accent-new);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        .feature-box {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border: 1px solid var(--card-border);
-            transition: 0.3s;
-            color: var(--text);
-        }
-        .feature-box:hover { transform: translateY(-5px); border-color: var(--accent-new); }
-
-        .checkout-box {
-            background: var(--card);
-            padding: 40px;
-            border-radius: 40px;
-            border: 2px solid var(--accent-new);
-            box-shadow: 0 40px 100px rgba(20, 184, 166, 0.15);
-            color: var(--text);
-        }
-        
-        @media (max-width: 900px) {
-            .hero-premium { flex-direction: column; text-align: center; }
-            .hero-content { text-align: center; padding: 0; }
-        }
+        .icon-check { width: 18px; height: 18px; fill: var(--accent-new); vertical-align: middle; margin-right: 8px; }
     </style>
 </head>
 <body>
-    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999; background: var(--bg); border-bottom: 1px solid var(--card-border); padding: 15px 5%; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
-        <div style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; width: 100%;">
-            <a href="index.html" class="cssLogo" style="margin: 0; flex-shrink: 0; text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                <div class="logoIcon" style="background: var(--accent-new); width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" fill="white"/>
-                    </svg>
+    <header class="landing-header">
+        <div class="header-container">
+            <a href="index.html" class="cssLogo" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <div style="background: var(--accent-new); width: 35px; height: 35px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
                 </div>
-                <div class="logoText" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.7rem; color: var(--text);">Health<span style="color: var(--accent-new);">2026</span></div>
+                <div class="logoText" style="font-weight: 800; font-size: 1.4rem; color: var(--text);">Health<span style="color: var(--accent-new);">2026</span></div>
             </a>
-            
-            <div style="display: flex; align-items: center; gap: 40px;">
-                <ul style="display: flex; list-style: none; gap: 30px; margin: 0; padding: 0; align-items: center;">
-                    <li><a href="index.html" style="font-weight: 700; text-decoration: none; color: var(--text); font-size: 0.95rem;">Home</a></li>
-                    <li><a href="#order" class="btn" style="background: var(--accent-new); color: white !important; padding: 12px 28px; border-radius: 12px; font-weight: 800; text-decoration: none; white-space: nowrap; display: inline-block;">Buy Now</a></li>
+            <div class="nav-items">
+                <ul class="nav-links">
+                    <li><a href="index.html" style="text-decoration: none; color: var(--text); font-weight: 600;">Home</a></li>
+                    <li><a href="#order" class="btn" style="background: var(--accent-new); color: white !important; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700;">Buy Now</a></li>
                 </ul>
-                <button id="themeToggle" style="background: var(--card); border: 1px solid var(--card-border); border-radius: 50%; width: 42px; height: 42px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: transform 0.3s;">&#9728;</button>
+                <button id="themeToggle" style="background: var(--card); border: 1px solid var(--card-border); border-radius: 50%; width: 38px; height: 38px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                    <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/></svg>
+                </button>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- HERO -->
-        <section class="hero-premium reveal">
+        <section class="hero-premium">
             <div class="hero-content">
                 <span class="section-tag">Medical Grade Accuracy</span>
-                <h1 style="font-size: 4.5rem; margin-bottom: 20px; line-height: 1.1;">Smart Baby <span style="color: var(--accent-new);">Thermometer PRO</span></h1>
-                <p style="font-size: 1.3rem; color: #64748b; margin-bottom: 40px; max-width: 550px;">Peace of mind in every reading. Clinical accuracy in just 0.1 seconds with our advanced non-contact infrared technology.</p>
-                <div class="buttons" style="justify-content: flex-start;">
-                    <a href="#order" class="btn" style="background: var(--accent-new); padding: 22px 50px; font-size: 1.1rem; border-radius: 18px;">ORDER NOW - 30% OFF</a>
+                <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 20px;">Smart Baby <span style="color: var(--accent-new);">Thermometer PRO</span></h1>
+                <p style="font-size: 1.2rem; color: #64748b; margin-bottom: 30px;">Certified accuracy in 0.1s. The safest choice for your family's health.</p>
+                <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px;">
+                    <div><svg class="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> FDA & CE Approved</div>
+                    <div><svg class="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> 2 Year Full Warranty</div>
                 </div>
-                <div style="margin-top: 30px; display: flex; gap: 20px; color: #14b8a6; font-weight: 700; font-size: 0.9rem;">
-                    <span>&#10003; FDA Approved</span>
-                    <span>&#10003; Hospital Grade</span>
-                    <span>&#10003; 2 Year Warranty</span>
-                </div>
+                <a href="#order" class="btn" style="background: var(--accent-new); padding: 20px 40px; font-size: 1.1rem; border-radius: 15px; display: inline-block; text-decoration: none; color: white;">ORDER NOW - 30% OFF</a>
             </div>
             <div class="hero-image">
-                <img src="images/baby_thermometer_premium.png" alt="Baby Thermometer Premium">
-                <div class="floating-badge" style="top: 10%; right: -20px;">
-                    <span style="font-size: 1.5rem;">&#11088;</span>
-                    <div>
-                        <div style="font-size: 0.7rem; opacity: 0.6;">Accuracy</div>
-                        <div>&#177;0.1&#176;C Precision</div>
-                    </div>
+                <img src="images/baby_thermometer_premium.png" alt="Product">
+            </div>
+        </section>
+
+        <section style="background: #f8fafc; padding: 80px 5%;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="text-align: center; margin-bottom: 50px;">Advanced <span style="color: var(--accent-new);">Features</span></h2>
+                <div class="grid-3">
+                    <div class="feature-box"><h3>Instant 0.1s</h3><p>Fastest reading in the market.</p></div>
+                    <div class="feature-box"><h3>Fever Alarm</h3><p>Color-coded warnings.</p></div>
+                    <div class="feature-box"><h3>32 Memories</h3><p>Track history easily.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- FEATURES -->
-        <section style="padding: 100px 10%; background: #f8fafc;">
-            <div style="text-align: center; margin-bottom: 70px;">
-                <span class="section-tag">High Technology</span>
-                <h2 style="font-size: 3rem; color: #0f172a;">Why Parents <span style="color: var(--accent-new);">Choose Us</span></h2>
-            </div>
-            <div class="projectGrid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                <div class="feature-box">
-                    <h3 style="color: var(--accent-new); margin-bottom: 15px;">0.1s Fast Reading</h3>
-                    <p>Instant measurement without disturbing your sleeping baby. Just point and click.</p>
-                </div>
-                <div class="feature-box">
-                    <h3 style="color: var(--accent-new); margin-bottom: 15px;">Fever Alarm</h3>
-                    <p>Backlit display changes color (Green/Orange/Red) to instantly notify you of fever levels.</p>
-                </div>
-                <div class="feature-box">
-                    <h3 style="color: var(--accent-new); margin-bottom: 15px;">32 Memory Sets</h3>
-                    <p>Automatically store the last 32 readings to track temperature trends over time.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- VIDEO -->
-        <section style="padding: 100px 10%; text-align: center;">
-            <span class="section-tag">Demonstration</span>
-            <h2 style="margin-bottom: 50px;">Simple. Accurate. <span style="color: var(--accent-new);">Safe.</span></h2>
-            <div style="max-width: 1000px; margin: 0 auto; border-radius: 40px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.1); border: 8px solid #fff;">
-                <iframe width="100%" height="562" src="https://www.youtube.com/embed/P_fUOn3mR1w" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <!-- REVIEWS -->
-        <section id="reviews" style="padding: 100px 10%; background: #fff;">
-             <div style="text-align: center; margin-bottom: 80px;">
-                <span class="section-tag">Testimonials</span>
-                <h2 style="color: #0f172a;">What <span style="color: var(--accent-new);">Parents</span> Are Saying</h2>
-            </div>
-            <div class="projectGrid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
-                <div style="background: #f8fafc; padding: 40px; border-radius: 32px;">
-                    <div style="color: #f59e0b; margin-bottom: 20px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">"The best investment for my newborn. I can check her temperature while she sleeps without waking her up. The 0.1s speed is incredible."</p>
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <div style="width: 45px; height: 45px; border-radius: 50%; background: var(--accent-new); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800;">EM</div>
-                        <div>
-                            <div style="font-weight: 800; color: #0f172a;">Emily M.</div>
-                            <div style="font-size: 0.8rem; color: #64748b;">Verified Mother</div>
-                        </div>
-                    </div>
-                </div>
-                <div style="background: #f8fafc; padding: 40px; border-radius: 32px;">
-                    <div style="color: #f59e0b; margin-bottom: 20px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">"Very accurate compared to my hospital thermometer. The color-coded display is super helpful when you are stressed in the middle of the night."</p>
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <div style="width: 45px; height: 45px; border-radius: 50%; background: #1e293b; color: white; display: flex; align-items: center; justify-content: center; font-weight: 800;">DK</div>
-                        <div>
-                            <div style="font-weight: 800; color: #0f172a;">David K.</div>
-                            <div style="font-size: 0.8rem; color: #64748b;">Verified Parent</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ORDER -->
-        <section id="order" style="padding: 120px 10%; background: radial-gradient(circle at 50% 50%, #f0f9ff 0%, #fff 100%);">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+        <section id="order" style="padding: 100px 5%;">
+            <div style="max-width: 1200px; margin: 0 auto;" class="grid-2">
                 <div>
-                    <span class="section-tag">Limited Time Deal</span>
-                    <h2 style="font-size: 3.5rem; text-align: left; margin-bottom: 25px;">Secure Your Family's <span style="color: var(--accent-new);">Safety Today</span></h2>
-                    <p style="font-size: 1.2rem; line-height: 1.6; color: #64748b; margin-bottom: 40px;">Order now and receive a free protective bag + Spare batteries. Limited stock available at this price.</p>
-                    
-                    <div style="margin-bottom: 40px;">
-                        <span style="font-size: 3.5rem; font-weight: 800; color: #0f172a;">$39.99</span>
-                        <span style="text-decoration: line-through; color: #94a3b8; font-size: 1.5rem; margin-left: 20px;">$59.99</span>
-                        <div style="color: var(--accent-new); font-weight: 700; margin-top: 10px;">&#10003; FREE SHIPPING WORLDWIDE</div>
-                    </div>
+                    <h2 style="font-size: 3rem; margin-bottom: 20px;">Secure One <span style="color: var(--accent-new);">For Your Home</span></h2>
+                    <div style="font-size: 3.5rem; font-weight: 800; margin-bottom: 10px;">$39.99</div>
+                    <p style="color: #64748b; font-size: 1.1rem;">Free Global Shipping Included.</p>
                 </div>
-
                 <div class="checkout-box">
-                    <div style="text-align: center; margin-bottom: 30px;">
-                        <img src="https://img.icons8.com/ios-filled/100/14b8a6/shield.png" width="40" style="margin-bottom: 10px;">
-                        <h3 style="margin: 0; color: #0f172a;">Secure Express Checkout</h3>
-                    </div>
-
-                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                         <a href="https://paypal.me/health2026/39.99USD" 
-                               target="_blank" 
-                               style="display: flex; align-items: center; justify-content: center; background: #ffc439; color: #111; text-decoration: none; padding: 18px; border-radius: 15px; font-weight: 900; gap: 10px; font-size: 1.1rem; box-shadow: 0 10px 20px rgba(255,196,57,0.15);">
-                                <img src="https://img.icons8.com/color/48/000000/paypal.png" width="24">
-                                <span>PAY VIA PAYPAL.ME</span>
-                        </a>
-                        
-                        <div id="card-btn-container" style="min-height: 50px;"></div>
-                    </div>
-                    
-                    <p style="text-align: center; margin-top: 25px; font-size: 0.8rem; color: #94a3b8;">&#10003; 30-Day Money Back Guarantee</p>
+                    <h3 style="text-align: center; margin-bottom: 25px;">Secure Checkout</h3>
+                    <a href="https://paypal.me/health2026/39.99USD" target="_blank" style="display: block; background: #ffc439; text-align: center; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 900; color: #111; margin-bottom: 20px;">PAY VIA PAYPAL</a>
+                    <div id="card-btn-container" style="min-height: 50px;"></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="padding: 60px 10%; text-align: center; border-top: 1px solid #f1f5f9; background: #fff;">
-        <p style="color: #94a3b8;">&#169; 2026 Health2026 Medical. All rights reserved.</p>
+    <footer style="text-align: center; padding: 50px; border-top: 1px solid #eee;">
+        <p>&copy; 2026 Health2026 Medical. All rights reserved.</p>
     </footer>
 
-    <script src="js/checkout.js?v=9999"></script>
+    <script src="js/checkout.js?v=999"></script>
     <script>
-        if (window.initAdvancedCardFields) {
-            initAdvancedCardFields('Smart Baby Thermometer PRO', '39.99', '#card-btn-container');
-        }
+        if (window.initAdvancedCardFields) { initAdvancedCardFields('Smart Baby Thermometer PRO', '39.99', '#card-btn-container'); }
         
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
         const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        
+        const themeIcon = document.getElementById('themeIcon');
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light');
-            themeToggle.innerHTML = body.classList.contains('light') ? '&#127769;' : '&#9728;';
+            document.body.classList.toggle('light');
+            const isLight = document.body.classList.contains('light');
+            themeIcon.innerHTML = isLight ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>' : '<circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>';
         });
     </script>
 </body>
