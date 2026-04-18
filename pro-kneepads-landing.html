@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro-Active KneePads - Performance & Protection | Health2026</title>
-    <link rel="stylesheet" href="css/style.css?v=505.0">
+    <link rel="stylesheet" href="css/style.css?v=606.0">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://www.paypal.com/sdk/js?client-id=AcbBKz68JfFF5dYLJc0UUeRbBu5LF810Xa3vvMCJ-W9P0QVvUJ2PDTjXYoEUZZTCeIizq5Wqx2LppUG6&currency=USD&components=buttons,card-fields"></script>
     <style>
@@ -12,84 +12,57 @@
         * { box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); transition: background 0.4s; margin: 0; overflow-x: hidden; }
         h1, h2, h3, .logoText { font-family: 'Outfit', sans-serif; margin: 0; }
-        
         .landing-header { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; background: var(--bg); border-bottom: 1px solid var(--card-border); padding: 10px 5%; backdrop-filter: blur(15px); }
         .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        
         .hero-premium { min-height: 90vh; display: flex; align-items: center; padding: 120px 5% 60px; gap: 40px; max-width: 1200px; margin: 0 auto; }
-        .hero-content { flex: 1; }
-        .hero-image { flex: 1; }
-        .hero-image img { width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
-        
+        .hero-content { flex: 1; } .hero-image { flex: 1; } .hero-image img { width: 100%; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
         .checkout-box { background: var(--card); padding: 30px; border-radius: 30px; border: 2px solid var(--accent-new); }
-        
-        @media (max-width: 768px) {
-            .hero-premium { flex-direction: column; text-align: center; padding-top: 100px; }
-            .grid-2 { grid-template-columns: 1fr !important; }
-            .hero-content { order: 1; }
-            .hero-image { order: 2; }
-            .nav-links { display: none; }
-            h1 { font-size: 3.5rem !important; }
-        }
-        .icon-check { width: 18px; height: 18px; fill: var(--accent-new); margin-right: 8px; vertical-align: middle; }
+        @media (max-width: 768px) { .hero-premium { flex-direction: column; text-align: center; padding-top: 100px; } .grid-2 { grid-template-columns: 1fr !important; } .hero-content { order: 1; } .hero-image { order: 2; h1 { font-size: 3.5rem !important; } } }
+        .icon-check { width: 18px; height: 18px; fill: var(--accent-new); vertical-align: middle; margin-right: 8px; }
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; z-index: 10000; }
     </style>
 </head>
 <body>
     <header class="landing-header">
         <div class="header-container">
             <a href="index.html" class="cssLogo" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                <div style="background: var(--accent-new); width: 35px; height: 35px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
-                </div>
+                <div style="background: var(--accent-new); width: 35px; height: 35px; border-radius: 10px; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg></div>
                 <div class="logoText" style="font-weight: 800; font-size: 1.4rem; color: var(--text);">Health<span style="color: var(--accent-new);">2026</span></div>
             </a>
-            <button id="themeToggle" style="background: var(--card); border: 1px solid var(--card-border); border-radius: 50%; width: 38px; height: 38px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-                <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/></svg>
-            </button>
+            <button id="themeToggle" style="background: var(--card); border: 1px solid var(--card-border); border-radius: 50%; width: 38px; height: 38px; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/></svg></button>
         </div>
     </header>
-
     <main>
         <section class="hero-premium">
             <div class="hero-content">
-                <h1 style="font-size: 5rem; line-height: 1; margin-bottom: 25px;">Pro-Active <span style="color: var(--accent-new);">KneePads</span></h1>
-                <p style="font-size: 1.4rem; color: #94a3b8; margin-bottom: 40px;">Maximize performance. Protect your joints. Go further.</p>
-                <div style="margin-bottom: 40px;">
-                    <div style="margin-bottom: 10px;"><svg class="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Compression Technology</div>
-                    <div><svg class="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Anti-Slip Design</div>
+                <h1 style="font-size: 4.5rem; margin-bottom: 20px;">Pro-Active <span style="color: var(--accent-new);">KneePads</span></h1>
+                <p style="font-size: 1.4rem; color: #94a3b8; margin-bottom: 30px;">Peak athletic support for your joints.</p>
+                <div style="margin-bottom: 30px;">
+                    <div><svg class="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Anti-Slip Technology</div>
                 </div>
-                <a href="#order" class="btn" style="background: var(--accent-new); padding: 20px 50px; border-radius: 12px; text-decoration: none; color: white; display: inline-block; font-weight: 800;">GET PROTECTED</a>
+                <a href="#order" class="btn" style="background: var(--accent-new); padding: 20px 40px; border-radius: 12px; color: white; text-decoration: none; font-weight: 800;">GET PERFORMANCE PACK</a>
             </div>
             <div class="hero-image"><img src="images/pro_kneepads_action.png"></div>
         </section>
-
-        <section id="order" style="padding: 100px 5%; background: #000;">
-            <div style="max-width: 1200px; margin: 0 auto;" class="grid-2">
-                <div>
-                    <h2 style="font-size: 3.5rem; color: #fff; margin-bottom: 20px;">Elite Protection</h2>
-                    <div style="font-size: 4rem; color: white; font-weight: 800;">$29.99</div>
-                    <p style="color: #64748b;">Free Shipping Included.</p>
-                </div>
+        <section id="order" style="padding: 100px 5%; background: var(--bg);">
+            <div class="grid-2" style="max-width: 1200px; margin: 0 auto;">
+                <div><h2 style="font-size: 3rem; margin-bottom: 20px;">Protect Your Joints</h2><div style="font-size: 3.5rem; font-weight: 800; margin-bottom: 10px;">$29.99</div></div>
                 <div class="checkout-box">
-                    <h3 style="text-align: center; color: white; margin-bottom: 25px;">Secure Order</h3>
-                    <a href="https://paypal.me/health2026/29.99USD" target="_blank" style="display: block; background: #ffc439; text-align: center; padding: 18px; border-radius: 15px; text-decoration: none; font-weight: 900; color: #111; margin-bottom: 20px;">ORDER WITH PAYPAL</a>
-                    <div id="card-button-container"></div>
+                    <h3 style="text-align: center; margin-bottom: 20px;">Secure Order</h3>
+                    <a href="https://paypal.me/health2026/29.99USD" target="_blank" style="display: block; background: #ffc439; text-align: center; padding: 15px; border-radius: 12px; font-weight: 900; color: #111; text-decoration: none; margin-bottom: 15px;">PAYPAL.ME</a>
+                    <button id="binanceBtn" style="width:100%; padding:15px; border-radius:12px; background:#f3ba2f; border:none; color:#111; font-weight:900; cursor:pointer; margin-bottom:15px;">BINANCE PAY</button>
+                    <div id="card-btn-container"></div>
                 </div>
             </div>
         </section>
     </main>
-
     <script src="js/checkout.js?v=999"></script>
     <script>
-        if (window.initAdvancedCardFields) { initAdvancedCardFields('Pro Kneepads', '29.99', '#card-button-container'); }
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light');
-            const isLight = document.body.classList.contains('light');
-            themeIcon.innerHTML = isLight ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>' : '<circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>';
-        });
+        if (window.initAdvancedCardFields) { initAdvancedCardFields('Pro Kneepads', '29.99', '#card-btn-container'); }
+        if (window.initOtherPayments) { initOtherPayments('Pro Kneepads', '29.99', '#card-btn-container', '#binanceBtn'); }
+        const themeToggle = document.getElementById('themeToggle'); const themeIcon = document.getElementById('themeIcon');
+        themeToggle.addEventListener('click', () => { document.body.classList.toggle('light'); const isLight = document.body.classList.contains('light'); themeIcon.innerHTML = isLight ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>' : '<circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>'; });
     </script>
 </body>
 </html>
