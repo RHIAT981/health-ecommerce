@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zenith Detox - Premium Herbal Cleanse | Health2026</title>
-    <link rel="stylesheet" href="css/style.css?v=606.0">
+    <link rel="stylesheet" href="css/style.css?v=707.0">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://www.paypal.com/sdk/js?client-id=AcbBKz68JfFF5dYLJc0UUeRbBu5LF810Xa3vvMCJ-W9P0QVvUJ2PDTjXYoEUZZTCeIizq5Wqx2LppUG6&currency=USD&components=buttons,card-fields"></script>
     <style>
@@ -14,13 +14,13 @@
         h1, h2, h3, .logoText { font-family: 'Outfit', sans-serif; margin: 0; }
         .landing-header { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; background: var(--bg); border-bottom: 1px solid var(--card-border); padding: 10px 5%; backdrop-filter: blur(15px); }
         .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .hero-premium { min-height: 90vh; display: flex; align-items: center; padding: 120px 5% 60px; gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .hero-premium { min-height: 80vh; display: flex; align-items: center; padding: 120px 5% 60px; gap: 40px; max-width: 1200px; margin: 0 auto; }
         .hero-content { flex: 1.2; } .hero-image { flex: 1; } .hero-image img { width: 100%; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
         .checkout-box { background: var(--card); padding: 30px; border-radius: 30px; border: 2px solid var(--accent-new); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 24px; box-shadow: 0 40px 80px rgba(0,0,0,0.6); margin: 50px 0; border: 1px solid rgba(255,255,255,0.05); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         @media (max-width: 768px) { .hero-premium { flex-direction: column; text-align: center; padding-top: 100px; } .grid-2 { grid-template-columns: 1fr !important; } .hero-content { order: 1; } .hero-image { order: 2; h1 { font-size: 3rem !important; } } }
-        .icon-check { width: 18px; height: 18px; fill: var(--accent-new); vertical-align: middle; margin-right: 8px; }
-        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; z-index: 10000; }
     </style>
 </head>
 <body>
@@ -33,25 +33,31 @@
             <button id="themeToggle" style="background: var(--card); border: 1px solid var(--card-border); border-radius: 50%; width: 38px; height: 38px; cursor: pointer; display: flex; align-items: center; justify-content: center;"><svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/></svg></button>
         </div>
     </header>
-    <main>
+    <main style="padding: 0 5%;">
         <section class="hero-premium">
             <div class="hero-content">
-                <h1 style="font-size: 4.5rem; margin-bottom: 20px;">Zenith <span style="color: var(--accent-new);">Detox</span></h1>
-                <p style="font-size: 1.4rem; color: #94a3b8; margin-bottom: 30px;">Professional grade herbal rejuvenation.</p>
-                <div style="margin-bottom: 30px;">
-                    <div><svg class="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> 100% Organic</div>
-                </div>
-                <a href="#order" class="btn" style="background: var(--accent-new); padding: 20px 40px; border-radius: 12px; color: white; text-decoration: none; font-weight: 800;">START DETOX</a>
+                <h1 style="font-size: 4.5rem; margin-bottom: 25px;">Zenith <span style="color: var(--accent-new);">Detox</span></h1>
+                <p style="font-size: 1.4rem; color: #94a3b8; margin-bottom: 40px;">Professional grade herbal rejuvenation.</p>
+                <a href="#order" class="btn" style="background: var(--accent-new); padding: 20px 50px; border-radius: 12px; color: white; text-decoration: none; font-weight: 800; display: inline-block;">START DETOX</a>
             </div>
             <div class="hero-image"><img src="images/herbal_detox_product.png"></div>
         </section>
-        <section id="order" style="padding: 100px 5%; background: var(--bg);">
+
+        <!-- VIDEO SECTION -->
+        <section style="max-width: 1000px; margin: 40px auto; text-align: center;">
+            <h2 style="margin-bottom: 30px;">Premium <span style="color: var(--accent-new);">Rejuvenation</span></h2>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/P_fUOn3mR1w" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="order" style="padding: 80px 0;">
             <div class="grid-2" style="max-width: 1200px; margin: 0 auto;">
-                <div><h2 style="font-size: 3rem; margin-bottom: 20px;">Secure Your Supply</h2><div style="font-size: 3.5rem; font-weight: 800; margin-bottom: 10px;">$49.00</div></div>
+                <div><h2 style="font-size: 3rem; margin-bottom: 20px;">Secure Your Supply</h2><div style="font-size: 3.5rem; font-weight: 800; color: white;">$49.00</div></div>
                 <div class="checkout-box">
-                    <h3 style="text-align: center; margin-bottom: 20px;">Secure Checkout</h3>
-                    <a href="https://paypal.me/health2026/49.00USD" target="_blank" style="display: block; background: #ffc439; text-align: center; padding: 15px; border-radius: 12px; font-weight: 900; color: #111; text-decoration: none; margin-bottom: 15px;">PAYPAL.ME</a>
-                    <button id="binanceBtn" style="width:100%; padding:15px; border-radius:12px; background:#f3ba2f; border:none; color:#111; font-weight:900; cursor:pointer; margin-bottom:15px;">BINANCE PAY</button>
+                    <h3 style="text-align: center; color: white; margin-bottom: 20px;">Secure Order</h3>
+                    <a href="https://paypal.me/health2026/49.00USD" target="_blank" style="display: block; background: #ffc439; text-align: center; padding: 15px; border-radius: 12px; font-weight: 900; color: #111; text-decoration: none; margin-bottom: 10px;">PAYPAL</a>
+                    <button id="binanceBtn" style="width:100%; padding:15px; border-radius:12px; background:#f3ba2f; border:none; color:#111; font-weight:900; cursor:pointer; margin-bottom:10px;">BINANCE</button>
                     <div id="card-btn-container"></div>
                 </div>
             </div>
