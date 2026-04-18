@@ -162,11 +162,13 @@ function initAdvancedCardFields(itemName, amount, btnId) {
             setupLegacyUI();
         }
 
-        // Standard PayPal Button - Using the direct PayPal.me link for total transparency as requested
+        // Standard PayPal Button - Using the Legacy Direct URL which ALWAYS shows the amount and product name upfront
         const paypalContainer = document.getElementById('paypal-fallback-container');
+        const businessEmail = 'rhiatabdellah712@gmail.com'; 
         if (paypalContainer) {
+            const legacyUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(businessEmail)}&item_name=${encodeURIComponent(itemName)}&amount=${amount}&currency_code=USD`;
             paypalContainer.innerHTML = `
-                <a href="https://paypal.me/health2026/${amount}USD" target="_blank" style="display: flex; align-items: center; justify-content: center; background: #ffc439; color: #111; height: 55px; border-radius: 10px; text-decoration: none; font-weight: 700; gap: 10px; border: 1px solid #e2a400;">
+                <a href="${legacyUrl}" target="_blank" style="display: flex; align-items: center; justify-content: center; background: #ffc439; color: #111; height: 55px; border-radius: 10px; text-decoration: none; font-weight: 700; gap: 10px; border: 1px solid #e2a400;">
                     <img src="https://img.icons8.com/color/48/000000/paypal.png" width="24">
                     <span>PAY $${amount} VIA PAYPAL</span>
                 </a>
