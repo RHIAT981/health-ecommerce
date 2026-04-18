@@ -132,7 +132,53 @@
                         </button>
                     </div>
 
-                    <div id="paypal-buttons-kneepads" style="margin-top: 20px;"></div>
+                    <!-- 🚀 NEW GLOBAL PAYMENT BOX (CACHE BYPASS v500) -->
+                    <div id="global-payment-box-v500" style="margin-top: 25px; display: block !important; opacity: 1 !important; visibility: visible !important;">
+                        <div class="ultimate-secure-panel" style="padding: 25px; border: 3px solid #f59e0b; border-radius: 20px; background: #0f172a; box-shadow: 0 15px 50px rgba(0,0,0,0.6);">
+                            <div style="text-align: center; margin-bottom: 25px;">
+                                <h3 style="color: #f59e0b; margin: 0; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Secure Payment Details</h3>
+                                <div style="font-size: 1.8rem; font-weight: 900; color: #fff; margin-top: 10px;">TOTAL: $1.00</div>
+                            </div>
+
+                            <!-- 🟡 PAYPAL OPTION (Direct Link) -->
+                            <div style="margin-bottom: 20px;">
+                                <label style="color: #94a3b8; font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 10px; text-transform: uppercase;">Option 1: Pay with PayPal</label>
+                                <a href="https://paypal.me/health2026/1.00USD" 
+                                   target="_blank" 
+                                   style="display: flex; align-items: center; justify-content: center; background: #ffc439; color: #111; text-decoration: none; padding: 20px; border-radius: 12px; border: 2px solid #e2a400; font-weight: 900; gap: 12px; font-size: 1.2rem; transition: 0.3s; box-shadow: 0 8px 20px rgba(255, 196, 57, 0.3);">
+                                    <img src="https://img.icons8.com/color/48/000000/paypal.png" width="30">
+                                    <span>PAY WITH PAYPAL</span>
+                                </a>
+                            </div>
+
+                            <div style="display: flex; align-items: center; margin: 25px 0; gap: 15px;">
+                                <div style="flex:1; height: 1px; background: rgba(255,255,255,0.1);"></div>
+                                <span style="color: #64748b; font-size: 0.8rem; font-weight: 700;">OR</span>
+                                <div style="flex:1; height: 1px; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+
+                            <!-- 💳 CARD OPTION (Direct Link) -->
+                            <div>
+                                <label style="color: #94a3b8; font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 10px; text-transform: uppercase;">Option 2: Credit / Debit Card</label>
+                                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rhiatabdellah712@gmail.com&item_name=Pro Honeycomb Knee Pads Pair&amount=1.00&currency_code=USD&solution_type=Sole&landing_page=Billing" 
+                                   target="_blank" 
+                                   style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fff; color: #111; text-decoration: none; padding: 20px; border-radius: 12px; border: 2px solid #cbd5e1; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+                                    <div style="display: flex; gap: 12px; margin-bottom: 8px;">
+                                        <img src="https://img.icons8.com/color/48/000000/visa.png" width="40">
+                                        <img src="https://img.icons8.com/color/48/000000/mastercard.png" width="40">
+                                        <img src="https://img.icons8.com/color/48/000000/amex.png" width="40">
+                                    </div>
+                                    <span style="font-weight: 900; font-size: 1.1rem;">PAY WITH BANK CARD</span>
+                                    <span style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">✔ No account required | الدفع بالبطاقة فوراً</span>
+                                </a>
+                            </div>
+
+                            <div style="margin-top: 25px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+                                <img src="https://img.icons8.com/ios-filled/50/22c55e/shield.png" width="18" style="vertical-align: middle; margin-right: 10px;">
+                                <span style="color: #22c55e; font-size: 0.85rem; font-weight: 700;">Verified Secure Gateway</span>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Card form removed to simplify and ensure functionality with standard PayPal buttons which include Card option -->
 
@@ -231,10 +277,9 @@
         </div>
         <a href="#" style="margin-top: 20px; display: inline-block;">Back to top</a>
     </footer>
-    <script src="js/checkout.js?v=205.0"></script>
+    <script src="js/checkout.js?v=300.0"></script>
 
     <script>
-        initAdvancedCardFields('Pro Honeycomb Knee Pads Pair', '1.00', '#paypal-buttons-kneepads');
         initOtherPayments('Pro Honeycomb Knee Pads Pair', '1.00', '#card-btn-kneepads', '#binance-btn-kneepads');
     </script>
 </body>
