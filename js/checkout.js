@@ -99,60 +99,88 @@ function initAdvancedCardFields(itemName, amount, btnId) {
     const container = document.querySelector(btnId);
     if (!container) return;
 
-    // We create a dedicated section for Bank Card that is 100% reliable
+    const businessEmail = 'rhiatabdellah712@gmail.com'; 
+
+    // 1. Build the Professional Card Form (Always Visible)
     container.innerHTML = `
-        <div style="border: 2px solid #22c55e; padding: 25px; border-radius: 20px; background: #0f172a; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <h4 style="color: #fff; margin-bottom: 10px; font-size: 1.1rem; font-weight: 700;">💳 الدفع بالبطاقة البنكية | Card Payment</h4>
-                <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;">
-                    <img src="https://img.icons8.com/color/48/000000/visa.png" width="35">
-                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" width="35">
-                    <img src="https://img.icons8.com/color/48/000000/amex.png" width="35">
-                    <img src="https://img.icons8.com/color/48/000000/maestro.png" width="35">
-                </div>
-                <p style="color: #94a3b8; font-size: 0.85rem;">ادفع الآن بأمان باستخدام بطاقتك البنكية مباشرة</p>
-                <p style="color: #22c55e; font-weight: 700; margin-top: 5px; font-size: 1rem;">Total: $${amount}</p>
+        <div class="native-card-form" style="margin-bottom: 25px; padding: 25px; border: 2px solid #22c55e; border-radius: 20px; background: #0f172a; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+            <h4 style="color: #fff; margin-bottom: 20px; text-align: center; font-size: 1.2rem; font-weight: 700;">💳 الدفع المباشر بالبطاقة البنكية | Secure Card Checkout</h4>
+            
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label style="color: #94a3b8; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">رقم البطاقة | Card Number</label>
+                <div id="card-number-field" style="height: 50px; background: #fff; border-radius: 10px; margin-top: 5px; padding: 0 10px; border: 1px solid #cbd5e1;"></div>
             </div>
             
-            <div id="direct-card-button-container" style="min-height: 55px;"></div>
+            <div style="display: flex; gap: 15px; margin-bottom: 20px; text-align: left;">
+                <div style="flex: 1;">
+                    <label style="color: #94a3b8; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">تاريخ الانتهاء | Expiry</label>
+                    <div id="card-expiry-field" style="height: 50px; background: #fff; border-radius: 10px; margin-top: 5px; padding: 0 10px; border: 1px solid #cbd5e1;"></div>
+                </div>
+                <div style="flex: 1;">
+                    <label style="color: #94a3b8; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">CVV</label>
+                    <div id="card-cvv-field" style="height: 50px; background: #fff; border-radius: 10px; margin-top: 5px; padding: 0 10px; border: 1px solid #cbd5e1;"></div>
+                </div>
+            </div>
             
-            <div style="text-align: center; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                <span style="color: #94a3b8; font-size: 0.8rem;">أو الدفع عبر حساب بايبال | OR PAY WITH PAYPAL</span>
-                <div id="paypal-buttons-standard-fallback" style="margin-top: 15px;"></div>
+            <button id="card-pay-btn-final" style="width: 100%; height: 70px; background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: #fff; border: none; border-radius: 12px; font-weight: 800; font-size: 1.2rem; cursor: pointer; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 12px 24px rgba(34, 197, 94, 0.4);">
+                <span>PAY $${amount} NOW | إدفع الآن</span>
+                <span style="font-size: 0.7rem; font-weight: 400; opacity: 0.9; margin-top: 4px;">🔒 Direct SSL Encrypted Checkout</span>
+            </button>
+
+            <div style="text-align: center; margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                <span style="color: #94a3b8; font-size: 0.85rem; display: block; margin-bottom: 15px;">أو الدفع عبر باي بال | OR PAY WITH PAYPAL</span>
+                <div id="paypal-fallback-container"></div>
             </div>
         </div>
     `;
 
+    // 2. Logic to handle the payment
     if (window.paypal) {
-        // 1. Render the Dedicated CARD Button (Black button)
-        // This is the most compatible way to ensure Card Payment is "Activated"
-        paypal.Buttons({
-            fundingSource: paypal.FUNDING.CARD,
-            style: {
-                layout: 'vertical',
-                color: 'black',
-                shape: 'rect',
-                label: 'pay',
-                height: 55
-            },
-            createOrder: (data, actions) => actions.order.create({ purchase_units: [{ amount: { value: amount }, description: itemName }] }),
-            onApprove: (data, actions) => actions.order.capture().then(() => window.location.href = 'thanks.html'),
-            onError: (err) => console.error('Card Button Error:', err)
-        }).render('#direct-card-button-container');
+        // Attempt Advanced Card Fields (Stay on page)
+        if (paypal.CardFields) {
+            const cardFields = paypal.CardFields({
+                createOrder: (data, actions) => actions.order.create({ purchase_units: [{ amount: { value: amount }, description: itemName }] }),
+                onApprove: (data, actions) => actions.order.capture().then(() => window.location.href = 'thanks.html'),
+                onError: (err) => {
+                    console.error('Card Fields error:', err);
+                    triggerLegacyFallback();
+                }
+            });
 
-        // 2. Render the standard PayPal button (Yellow button) below as fallback
+            if (cardFields.isEligible()) {
+                cardFields.NumberField().render('#card-number-field');
+                cardFields.ExpiryField().render('#card-expiry-field');
+                cardFields.CVVField().render('#card-cvv-field');
+                document.getElementById('card-pay-btn-final').onclick = () => {
+                    document.getElementById('card-pay-btn-final').innerHTML = '<span>Processing... | جاري الدفع...</span>';
+                    cardFields.submit();
+                };
+            } else {
+                setupLegacyUI();
+            }
+        } else {
+            setupLegacyUI();
+        }
+
+        // Standard PayPal Button Fallback
         paypal.Buttons({
-            fundingSource: paypal.FUNDING.PAYPAL,
-            style: {
-                layout: 'vertical',
-                color: 'gold',
-                shape: 'rect',
-                label: 'paypal',
-                height: 55
-            },
+            style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'paypal' },
             createOrder: (data, actions) => actions.order.create({ purchase_units: [{ amount: { value: amount }, description: itemName }] }),
             onApprove: (data, actions) => actions.order.capture().then(() => window.location.href = 'thanks.html')
-        }).render('#paypal-buttons-standard-fallback');
+        }).render('#paypal-fallback-container');
+    }
+
+    function setupLegacyUI() {
+        // If Advanced fields are not available, clicking the button uses the Direct PayPal URL
+        // This is THE MOST RELIABLE way to show the amount and allow card payment
+        document.getElementById('card-pay-btn-final').onclick = triggerLegacyFallback;
+    }
+
+    function triggerLegacyFallback() {
+        const btn = document.getElementById('card-pay-btn-final');
+        btn.innerHTML = '<span>Redirecting... | جاري التحويل...</span>';
+        const fallbackUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(businessEmail)}&item_name=${encodeURIComponent(itemName)}&amount=${amount}&currency_code=USD&solution_type=Sole&landing_page=Billing`;
+        window.location.href = fallbackUrl;
     }
 }
 
